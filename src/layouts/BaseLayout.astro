@@ -50,7 +50,7 @@ const archiveFilter = Astro.url.pathname.replace(/\/+$/, '') === '/archive';
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={pageUrl} />
-		<link rel="icon" href={assetUrl(SITE.icon)} />
+		<link rel="icon" href={assetUrl(SITE.icon)} type="image/png" />
 		<link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss/" />
 		<meta property="og:site_name" content={SITE.title} />
 		<meta property="og:type" content={type} />

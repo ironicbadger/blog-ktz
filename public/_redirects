@@ -1,3 +1,4 @@
+/favicon.ico https://pub-430e0c9ecb66464fa6999cd23a749d13.r2.dev/content/images/size/w256h256/2021/09/2773080.png 302
 /rss/ /rss.xml 301
 /tag/:tag/rss/ /tag/:tag/rss.xml 301
 /author/:author/rss/ /author/:author/rss.xml 301
