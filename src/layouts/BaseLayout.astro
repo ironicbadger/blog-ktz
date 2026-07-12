@@ -47,6 +47,7 @@ const archiveFilter = Astro.url.pathname.replace(/\/+$/, '') === '/archive';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
+		<script is:inline defer data-domain="blog.ktz.me" src="https://plausible.ktz.cloud/js/script.js"></script>
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={pageUrl} />
