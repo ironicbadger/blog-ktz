@@ -1,0 +1,92 @@
+{
+  "title": "ktz.",
+  "description": "Podcaster. Musician. Photographer. Tailscalar.",
+  "logo": null,
+  "icon": "https://blog.ktz.me/content/images/size/w256h256/2021/09/2773080.png",
+  "accent_color": "#15171A",
+  "cover_image": "https://blog.ktz.me/content/images/2022/12/7F8A5167-3.jpg",
+  "facebook": null,
+  "twitter": null,
+  "locale": "en",
+  "timezone": "America/New_York",
+  "codeinjection_head": "<link href=\"https://fonts.googleapis.com/css?family=Encode+Sans:300&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n<script defer data-domain=\"blog.ktz.me\" src=\"https://plausible.ktz.cloud/js/plausible.js\"></script>\n\n<style>\n  body { \n      font-family: 'Encode Sans', sans-serif; \n      font-size: 1rem;\n  }\n  p { \n      font-family: 'Encode Sans', sans-serif;\n      font-size: 1.75rem;\n  }\n  td {\n      font-family: Consolas, monospace;\n      font-size: 1.4rem;\n  }\n    \n  .post-card p { \n      line-height: 1.5em;\n      font-size: 1.5rem;\n  }\n  .post-full-content pre {\n      background: #606060;\n      border: 0px;\n      font-size: 1.5rem;\n      line-height: 1.5em;\n  }\n    \n  .site-home-header {\n    z-index: 1000;\n  }\n    \n  .site-home-header .site-header-content {\n    padding: -100vw -3vw -6vw;\n  }\n    \n  .site-home-header .site-title {\n    font-size: 6.5rem;\n    text-align: left;\n  }\n     \n  .site-header-background {\n    \n    background-size: cover;\n    background-position: bottom;\n  }\n    \n  .no-bullets {\n    list-style-type: none;\n  }\n    \n  pre {\n    word-wrap: normal;\n    -moz-hyphens: none;\n    -ms-hyphens: none;\n    -webkit-hyphens: none;\n    hyphens: none;\n    color: #333;\n  }\n  pre code, pre tt {\n    white-space: pre;\n  }\n</style>\n\n<!-- Global site tag (gtag.js) - Google Analytics -->\n<!-- <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-17919826-7\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'UA-17919826-7');\n</script> -->\n\n<script data-name=\"BMC-Widget\" src=\"https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js\" data-id=\"alexktz\" data-description=\"Support me on Buy me a coffee!\" data-color=\"#FF813F\" data-position=\"\" data-x_margin=\"18\" data-y_margin=\"18\"></script>",
+  "codeinjection_foot": "    <script type=\"text/javascript\">\n        let ghostSearch = new GhostSearch({\n            host: 'https://blog.ktz.me',\n            key: '36b8baf4c5a3e8cdea81220240',\n            url: 'https://blog.ktz.me',\n            input: '#search-field',\n            results: '#results',\n            options: {\n                parameters: { \n                    filter: \"published_at:>'2013-01-01 00:00:00'\",\n                },\n                limit: 6        \t\n            },\n            on: {\n                afterDisplay: function(results) {\n                    if (results.total == 0 && document.getElementById('search-field').value != '') {\n                        let resultsElement = document.getElementById('results');\n                        let e = document.createElement('p');\n                        resultsElement.setAttribute(\"style\", \"text-align:left;\");\n                        resultsElement.setAttribute(\"class\", \"no-bullets;\");\n                        e.innerHTML = 'No Search results';\n                        resultsElement.appendChild(e.firstChild);\n                    };\n                }\n            },\n            api: {\n                resource: 'posts',\n                parameters: {\n                    fields: ['title', 'slug', 'plaintext'],\n                    formats: 'plaintext',\n                },\n            },\n            template: function(result) {\n                let url = [location.protocol, '//', location.host].join('');\n                return '<ul><li><a href=\"' + url + '/' + result.slug + '/' + '\">' + result.title + '</a></li></ul>';\n            }\n        })\n    </script>",
+  "navigation": [
+    {
+      "label": "About",
+      "url": "/about/"
+    },
+    {
+      "label": "Technical",
+      "url": "/tag/technical/"
+    },
+    {
+      "label": "Travel",
+      "url": "/tag/travel/"
+    }
+  ],
+  "secondary_navigation": [
+    {
+      "label": "podcast",
+      "url": "https://selfhosted.show/"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/ironicbadger"
+    },
+    {
+      "label": "github",
+      "url": "https://github.com/IronicBadger"
+    },
+    {
+      "label": "youtube",
+      "url": "https://www.youtube.com/@ktzsystems"
+    },
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/alex-kretzschmar/"
+    }
+  ],
+  "meta_title": "ktz.blog",
+  "meta_description": null,
+  "og_image": null,
+  "og_title": null,
+  "og_description": null,
+  "twitter_image": null,
+  "twitter_title": null,
+  "twitter_description": null,
+  "members_support_address": "noreply",
+  "members_enabled": false,
+  "donations_enabled": false,
+  "allow_self_signup": false,
+  "members_invite_only": false,
+  "members_signup_access": "none",
+  "paid_members_enabled": false,
+  "firstpromoter_account": null,
+  "portal_button_style": "icon-and-text",
+  "portal_button_signup_text": "Subscribe",
+  "portal_button_icon": null,
+  "portal_signup_terms_html": null,
+  "portal_signup_checkbox_required": false,
+  "portal_plans": [
+    "free",
+    "monthly",
+    "yearly"
+  ],
+  "portal_default_plan": "yearly",
+  "portal_name": true,
+  "portal_button": false,
+  "comments_enabled": "off",
+  "recommendations_enabled": false,
+  "outbound_link_tagging": true,
+  "default_email_address": "noreply@blog.ktz.me",
+  "support_email_address": "noreply@blog.ktz.me",
+  "editor_default_email_recipients": "disabled",
+  "labs": {
+    "editorExcerpt": true
+  },
+  "site_uuid": "bbb30e86-d1fc-4937-902a-3e928edf1e65",
+  "lang": "en",
+  "url": "https://blog.ktz.me/",
+  "version": "5.130"
+}

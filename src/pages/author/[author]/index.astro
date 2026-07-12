@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import authors from '../../../data/authors.json';
+import ArchiveHeader from '../../../components/ArchiveHeader.astro';
+import PostFeed from '../../../components/PostFeed.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, postsByAuthor, sortPosts } from '../../../lib/content';
+import { canonicalUrl } from '../../../lib/site';
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	return authors.map((author) => {
+		const authored = postsByAuthor(posts, author.slug);
+		return { params: { author: author.slug }, props: { author, posts: authored, pages: pageCount(authored) } };
+	});
+}
+
+const { author, posts, pages } = Astro.props;
+const description = author.bio || `${posts.length} posts by ${author.name}.`;
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: author.name,
+	url: canonicalUrl(`/author/${author.slug}/`),
+	image: author.profile_image,
+};
+---
+
+<BaseLayout title={author.name} description={description} image={author.cover_image || author.profile_image} bodyClass="author-template" structuredData={structuredData}>
+	<ArchiveHeader title={author.name} description={`${posts.length} posts`} image={author.cover_image} />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={pageSlice(posts, 1)} page={1} nextUrl={pages > 1 ? `/author/${author.slug}/page/2/` : undefined} />
+		</div>
+	</main>
+</BaseLayout>

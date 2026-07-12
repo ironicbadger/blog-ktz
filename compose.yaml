@@ -1,0 +1,29 @@
+name: ktz-blog
+
+services:
+  site:
+    build:
+      context: .
+      args:
+        PUBLIC_ASSET_BASE_URL: "${PUBLIC_ASSET_BASE_URL:-}"
+    image: ktz-blog:local
+    init: true
+    ports:
+      - "127.0.0.1:${BLOG_PORT:-8080}:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=16m
+    volumes:
+      - type: bind
+        source: ./assets-local/content
+        target: /usr/share/nginx/html/content
+        read_only: true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/_healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+

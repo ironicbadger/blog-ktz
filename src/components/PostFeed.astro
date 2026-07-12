@@ -1,0 +1,40 @@
+---
+import type { Post } from '../lib/content';
+import PostCard from './PostCard.astro';
+
+interface Props {
+	posts: Post[];
+	page?: number;
+	nextUrl?: string;
+	previousUrl?: string;
+}
+
+const { posts, page = 1, nextUrl, previousUrl } = Astro.props;
+---
+
+{previousUrl && <link rel="prev" href={previousUrl} />}
+{nextUrl && <link rel="next" href={nextUrl} />}
+
+<section class="post-feed" aria-label={`Posts, page ${page}`}>
+	{
+		posts.map((post, index) => {
+			const position = index % 6;
+			return (
+				<PostCard
+					post={post}
+					large={position === 0}
+					twoUp={position === 4 || position === 5}
+					priority={page === 1 && index === 0}
+				/>
+			);
+		})
+	}
+</section>
+
+{(nextUrl || previousUrl) && (
+	<nav class="pagination" aria-label="Pagination">
+		{previousUrl ? <a href={previousUrl}>← Newer posts</a> : <span></span>}
+		<span>Page {page}</span>
+		{nextUrl ? <a href={nextUrl}>Older posts →</a> : <span></span>}
+	</nav>
+)}

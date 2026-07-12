@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /ghost/
+Sitemap: https://blog.ktz.me/sitemap.xml

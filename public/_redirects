@@ -1,0 +1,4 @@
+/rss/ /rss.xml 301
+/tag/:tag/rss/ /tag/:tag/rss.xml 301
+/author/:author/rss/ /author/:author/rss.xml 301
+/:slug/amp/ /:slug/ 301

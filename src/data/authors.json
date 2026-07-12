@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "name": "Alex Kretzschmar",
+    "slug": "alex",
+    "profile_image": "https://www.gravatar.com/avatar/fe787a6cc9815aba6f8d6fc22471f238?s=250&r=x&d=mp",
+    "cover_image": null,
+    "bio": null,
+    "website": null,
+    "location": null,
+    "facebook": null,
+    "twitter": null,
+    "meta_title": null,
+    "meta_description": null,
+    "threads": null,
+    "bluesky": null,
+    "mastodon": null,
+    "tiktok": null,
+    "youtube": null,
+    "instagram": null,
+    "linkedin": null,
+    "count": {
+      "posts": 233
+    },
+    "url": "https://blog.ktz.me/author/alex/"
+  }
+]

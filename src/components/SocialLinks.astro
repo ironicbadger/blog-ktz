@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const allLinks = [
+	{ label: 'Self-Hosted podcast', href: 'https://selfhosted.show/', icon: 'simple-icons:podcastindex' },
+	{ label: 'Twitter', href: 'https://twitter.com/ironicbadger', icon: 'simple-icons:x' },
+	{ label: 'GitHub', href: 'https://github.com/IronicBadger', icon: 'simple-icons:github' },
+	{ label: 'YouTube', href: 'https://www.youtube.com/@ktzsystems', icon: 'simple-icons:youtube' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-kretzschmar/', icon: 'simple-icons:linkedin' },
+];
+const links = compact
+	? allLinks.filter(({ label }) => label !== 'Self-Hosted podcast' && label !== 'Twitter')
+	: allLinks;
+---
+
+<ul class="social-links" aria-label="Social links">
+	{links.map(({ label, href, icon }) => (
+		<li>
+			<a href={href} target="_blank" rel="me noreferrer" aria-label={label} title={label}>
+				<Icon name={icon} aria-hidden="true" size={18} />
+			</a>
+		</li>
+	))}
+</ul>

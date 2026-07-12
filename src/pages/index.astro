@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import HomeHero from '../components/HomeHero.astro';
+import PostFeed from '../components/PostFeed.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, sortPosts } from '../lib/content';
+import { canonicalUrl, SITE } from '../lib/site';
+
+const posts = sortPosts(await getCollection('posts'));
+const pages = pageCount(posts);
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: SITE.title,
+	url: canonicalUrl('/'),
+	description: SITE.description,
+};
+---
+
+<BaseLayout bodyClass="home-template" showNav={false} structuredData={structuredData}>
+	<HomeHero />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={pageSlice(posts, 1)} page={1} nextUrl={pages > 1 ? '/page/2/' : undefined} />
+		</div>
+	</main>
+</BaseLayout>

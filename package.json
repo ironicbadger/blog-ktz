@@ -1,0 +1,49 @@
+{
+  "name": "ktz-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/prepare-dev.mjs && astro dev --host 0.0.0.0",
+    "build": "node scripts/prepare-build.mjs && astro check && astro build && node scripts/generate-taxonomy-feeds.mjs",
+    "preview": "astro preview",
+    "content:import": "node scripts/import-ghost.mjs",
+    "content:verify": "node scripts/verify-content.mjs",
+    "post:new": "node scripts/new-post.mjs",
+    "post:image": "node scripts/add-post-images.mjs",
+    "post:publish": "node scripts/publish-post.mjs",
+    "assets:manifest": "node scripts/prepare-r2-assets.mjs",
+    "assets:responsive": "node scripts/generate-responsive-images.mjs",
+    "assets:verify": "node scripts/verify-assets.mjs",
+    "assets:upload": "node scripts/prepare-r2-assets.mjs --upload",
+    "deploy:pages": "node scripts/deploy-pages.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.1",
+    "@astrojs/mdx": "^7.0.2",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/geist": "^5.2.9",
+    "@iconify-json/simple-icons": "^1.2.89",
+    "@lucide/astro": "^1.24.0",
+    "astro": "^7.0.7",
+    "astro-icon": "^1.1.5",
+    "cheerio": "^1.2.0",
+    "fuse.js": "^7.4.2",
+    "sharp": "^0.35.3",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
+    "unist-util-visit": "^5.1.0",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/turndown": "^5.0.6",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.110.0"
+  }
+}

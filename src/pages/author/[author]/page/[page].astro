@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import authors from '../../../../data/authors.json';
+import ArchiveHeader from '../../../../components/ArchiveHeader.astro';
+import PostFeed from '../../../../components/PostFeed.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, postsByAuthor, sortPosts } from '../../../../lib/content';
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	return authors.flatMap((author) => {
+		const authored = postsByAuthor(posts, author.slug);
+		const pages = pageCount(authored);
+		return Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
+			const page = index + 2;
+			return { params: { author: author.slug, page: String(page) }, props: { author, page, pages, posts: pageSlice(authored, page), total: authored.length } };
+		});
+	});
+}
+
+const { author, page, pages, posts, total } = Astro.props;
+const previousUrl = page === 2 ? `/author/${author.slug}/` : `/author/${author.slug}/page/${page - 1}/`;
+const nextUrl = page < pages ? `/author/${author.slug}/page/${page + 1}/` : undefined;
+---
+
+<BaseLayout title={`${author.name} - Page ${page}`} bodyClass="author-template paged">
+	<ArchiveHeader title={author.name} description={`${total} posts`} image={author.cover_image} />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={posts} page={page} previousUrl={previousUrl} nextUrl={nextUrl} />
+		</div>
+	</main>
+</BaseLayout>

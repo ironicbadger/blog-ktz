@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import ArchiveHeader from '../../../../components/ArchiveHeader.astro';
+import PostFeed from '../../../../components/PostFeed.astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, postsWithTag, publicTags, sortPosts } from '../../../../lib/content';
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	return publicTags().flatMap((tag) => {
+		const tagged = postsWithTag(posts, tag.slug);
+		const pages = pageCount(tagged);
+		return Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
+			const page = index + 2;
+			return { params: { tag: tag.slug, page: String(page) }, props: { tag, page, pages, posts: pageSlice(tagged, page), total: tagged.length } };
+		});
+	});
+}
+
+const { tag, page, pages, posts, total } = Astro.props;
+const previousUrl = page === 2 ? `/tag/${tag.slug}/` : `/tag/${tag.slug}/page/${page - 1}/`;
+const nextUrl = page < pages ? `/tag/${tag.slug}/page/${page + 1}/` : undefined;
+---
+
+<BaseLayout title={`${tag.name} - Page ${page}`} bodyClass="tag-template paged">
+	<ArchiveHeader title={tag.name} description={`${total} posts`} image={tag.feature_image} />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={posts} page={page} previousUrl={previousUrl} nextUrl={nextUrl} />
+		</div>
+	</main>
+</BaseLayout>

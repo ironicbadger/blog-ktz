@@ -1,0 +1,7 @@
+{
+  "cloudflareAccountId": "87f000053c6198ee887e7781685c58f1",
+  "pagesProject": "blog-ktz",
+  "productionBranch": "main",
+  "r2Bucket": "blog-ktz-assets",
+  "assetBaseUrl": "https://pub-430e0c9ecb66464fa6999cd23a749d13.r2.dev"
+}

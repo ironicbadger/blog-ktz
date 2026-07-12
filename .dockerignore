@@ -1,0 +1,11 @@
+.astro
+.cache
+.env
+.env.*
+.git
+.r2
+assets-local
+dist
+node_modules
+npm-debug.log*
+public/content

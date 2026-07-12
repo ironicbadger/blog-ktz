@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import HomeHero from '../../components/HomeHero.astro';
+import PostFeed from '../../components/PostFeed.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, sortPosts } from '../../lib/content';
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	const pages = pageCount(posts);
+	return Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
+		const page = index + 2;
+		return { params: { page: String(page) }, props: { page, pages, posts: pageSlice(posts, page) } };
+	});
+}
+
+const { page, pages, posts } = Astro.props;
+const previousUrl = page === 2 ? '/' : `/page/${page - 1}/`;
+const nextUrl = page < pages ? `/page/${page + 1}/` : undefined;
+---
+
+<BaseLayout title={`Page ${page}`} bodyClass="home-template paged" showNav={false}>
+	<HomeHero />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={posts} page={page} previousUrl={previousUrl} nextUrl={nextUrl} />
+		</div>
+	</main>
+</BaseLayout>

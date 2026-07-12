@@ -1,0 +1,113 @@
+---
+import { Search, X } from '@lucide/astro';
+
+interface Props {
+	total: number;
+}
+
+const { total } = Astro.props;
+---
+
+<div class="archive-search" data-archive-search data-total={total}>
+	<form class="search-form" role="search">
+		<label class="sr-only" for="archive-search-input">Filter archived posts</label>
+		<Search class="search-icon" aria-hidden="true" size={20} />
+		<input
+			id="archive-search-input"
+			type="search"
+			placeholder="Filter posts…"
+			autocomplete="off"
+			spellcheck="false"
+			aria-controls="archive-list"
+			aria-describedby="archive-search-status"
+		/>
+		<button class="search-clear" type="button" aria-label="Clear archive filter" hidden>
+			<X aria-hidden="true" size={20} />
+		</button>
+	</form>
+	<p id="archive-search-status" class="archive-search-status" role="status" aria-live="polite">
+		{total} posts
+	</p>
+</div>
+
+<script>
+	import Fuse from 'fuse.js';
+	import { SEARCH_OPTIONS, type SearchItem } from '../lib/search';
+
+	const roots = document.querySelectorAll<HTMLElement>('[data-archive-search]');
+	for (const root of roots) {
+		const form = root.querySelector<HTMLFormElement>('form');
+		const input = root.querySelector<HTMLInputElement>('input');
+		const clear = root.querySelector<HTMLButtonElement>('.search-clear');
+		const status = root.querySelector<HTMLElement>('.archive-search-status');
+		const list = document.querySelector<HTMLOListElement>('#archive-list');
+		const rows = list ? Array.from(list.querySelectorAll<HTMLElement>('[data-post-slug]')) : [];
+		const total = Number(root.dataset.total || rows.length);
+		if (!form || !input || !clear || !status || !list) continue;
+
+		let fuse: Fuse<SearchItem> | undefined;
+		let loading: Promise<void> | undefined;
+
+		const showAll = () => {
+			for (const row of rows) row.hidden = false;
+			status.textContent = `${total} posts`;
+		};
+
+		const prepare = () => {
+			if (fuse) return Promise.resolve();
+			if (!loading) {
+				status.textContent = 'Loading search…';
+				loading = fetch('/search-index.json')
+					.then((response) => {
+						if (!response.ok) throw new Error('Search index unavailable');
+						return response.json() as Promise<SearchItem[]>;
+					})
+					.then((items) => {
+						fuse = new Fuse(items, SEARCH_OPTIONS);
+						if (!input.value.trim()) status.textContent = `${total} posts`;
+					})
+					.catch(() => {
+						status.textContent = 'Search is unavailable right now.';
+					});
+			}
+			return loading;
+		};
+
+		const render = async () => {
+			const initialQuery = input.value.trim();
+			clear.hidden = initialQuery.length === 0;
+			if (!initialQuery) return showAll();
+
+			await prepare();
+			if (!fuse) return;
+			const query = input.value.trim();
+			if (!query) return showAll();
+
+			const matchingSlugs = new Set(fuse.search(query).map(({ item }) => item.slug));
+			let visible = 0;
+			for (const row of rows) {
+				const matches = matchingSlugs.has(row.dataset.postSlug || '');
+				row.hidden = !matches;
+				if (matches) visible += 1;
+			}
+			status.textContent = visible === 1 ? '1 matching post' : `${visible} matching posts`;
+		};
+
+		form.addEventListener('submit', (event) => event.preventDefault());
+		input.addEventListener('focus', () => void prepare());
+		input.addEventListener('input', () => void render());
+		input.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') {
+				input.value = '';
+				clear.hidden = true;
+				showAll();
+			}
+		});
+		clear.addEventListener('click', () => {
+			input.value = '';
+			clear.hidden = true;
+			showAll();
+			input.focus();
+		});
+	}
+</script>

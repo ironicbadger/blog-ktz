@@ -1,0 +1,23 @@
+---
+import { tagDetails, type Post } from '../lib/content';
+import PostCard from './PostCard.astro';
+
+interface Props {
+	posts: Post[];
+	primaryTag?: string | null;
+}
+
+const { posts, primaryTag } = Astro.props;
+const primaryTagName = primaryTag ? tagDetails(primaryTag)?.name || primaryTag : undefined;
+---
+
+{posts.length > 0 && (
+	<aside class="read-next outer" aria-label="More posts">
+		<div class="inner">
+			<h2>{primaryTagName ? `More in ${primaryTagName}` : 'Keep reading'}</h2>
+			<div class="read-next-grid">
+				{posts.map((post) => <PostCard post={post} />)}
+			</div>
+		</div>
+	</aside>
+)}

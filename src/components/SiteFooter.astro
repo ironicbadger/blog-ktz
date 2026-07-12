@@ -1,0 +1,13 @@
+---
+import { SITE } from '../lib/site';
+import SocialLinks from './SocialLinks.astro';
+---
+
+<footer class="site-footer outer">
+	<div class="inner site-footer-inner">
+		<a class="site-footer-brand" href="/">{SITE.title}</a>
+		<SocialLinks />
+		<p>© {new Date().getFullYear()} Alex Kretzschmar</p>
+		<a href="/rss/">RSS</a>
+	</div>
+</footer>

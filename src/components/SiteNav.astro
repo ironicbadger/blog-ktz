@@ -1,0 +1,34 @@
+---
+import { SITE } from '../lib/site';
+import NavSearch from './NavSearch.astro';
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+	mode?: 'overlay' | 'fixed';
+	showSearch?: boolean;
+	archiveFilter?: boolean;
+}
+
+const { mode = 'fixed', showSearch = false, archiveFilter = false } = Astro.props;
+---
+
+<nav class:list={['site-nav-shell', `site-nav-shell--${mode}`]} aria-label="Primary navigation">
+	<div class="site-nav inner">
+		<div class="site-nav-left">
+			<a class="site-nav-logo" href="/" aria-label="ktz. home">ktz.</a>
+			<ul class="site-links">
+				{SITE.navigation.map((item) => (
+					<li><a href={item.url}>{item.label}</a></li>
+				))}
+			</ul>
+		</div>
+		{showSearch ? (
+			<div class="site-nav-right">
+				<SocialLinks compact />
+				<NavSearch archiveFilter={archiveFilter} />
+			</div>
+		) : (
+			<SocialLinks />
+		)}
+	</div>
+</nav>

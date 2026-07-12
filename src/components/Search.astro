@@ -1,0 +1,125 @@
+---
+import { FileSearch, Search, X } from '@lucide/astro';
+---
+
+<div class="hero-search" data-search>
+	<form class="search-form" role="search">
+		<label class="sr-only" for="site-search">Search posts</label>
+		<Search class="search-icon" aria-hidden="true" size={20} />
+		<input
+			id="site-search"
+			type="search"
+			placeholder="Search..."
+			autocomplete="off"
+			spellcheck="false"
+			aria-controls="search-results"
+			aria-expanded="false"
+			aria-keyshortcuts="Meta+K Control+K"
+		/>
+		<button class="search-clear" type="button" aria-label="Clear search" hidden>
+			<X aria-hidden="true" size={20} />
+		</button>
+		<kbd class="search-shortcut-hint" aria-hidden="true">⌘ K</kbd>
+	</form>
+	<div id="search-results" class="search-results" role="region" aria-live="polite" hidden>
+		<p class="search-status"></p>
+		<ul></ul>
+	</div>
+	<template data-search-result-icon><FileSearch aria-hidden="true" size={22} /></template>
+</div>
+
+<script>
+	import Fuse from 'fuse.js';
+	import { SEARCH_OPTIONS, type SearchItem } from '../lib/search';
+	import { installSearchKeyboardNavigation, renderSearchResult, searchByRelevance } from '../lib/search-ui';
+
+	const roots = document.querySelectorAll<HTMLElement>('[data-search]');
+	for (const root of roots) {
+		const form = root.querySelector<HTMLFormElement>('form');
+		const input = root.querySelector<HTMLInputElement>('input');
+		const clear = root.querySelector<HTMLButtonElement>('.search-clear');
+		const panel = root.querySelector<HTMLElement>('.search-results');
+		const status = root.querySelector<HTMLElement>('.search-status');
+		const list = root.querySelector<HTMLUListElement>('ul');
+		const iconTemplate = root.querySelector<HTMLTemplateElement>('[data-search-result-icon]');
+		if (!form || !input || !clear || !panel || !status || !list) continue;
+
+		let fuse: Fuse<SearchItem> | undefined;
+		let loading: Promise<void> | undefined;
+
+		const prepare = () => {
+			if (fuse) return Promise.resolve();
+			if (!loading) {
+				status.textContent = 'Loading search…';
+				loading = fetch('/search-index.json')
+					.then((response) => {
+						if (!response.ok) throw new Error('Search index unavailable');
+						return response.json() as Promise<SearchItem[]>;
+					})
+					.then((items) => {
+						fuse = new Fuse(items, SEARCH_OPTIONS);
+					})
+					.catch(() => {
+						status.textContent = 'Search is unavailable right now.';
+					});
+			}
+			return loading;
+		};
+
+		const close = () => {
+			panel.hidden = true;
+			input.setAttribute('aria-expanded', 'false');
+			list.replaceChildren();
+			status.textContent = '';
+		};
+
+		const render = async () => {
+			const initialQuery = input.value.trim();
+			clear.hidden = initialQuery.length === 0;
+			if (initialQuery.length === 0) return close();
+			panel.hidden = false;
+			input.setAttribute('aria-expanded', 'true');
+			await prepare();
+			if (!fuse) return;
+			const query = input.value.trim();
+			if (!query) return close();
+
+			const results = searchByRelevance(fuse, query);
+			list.replaceChildren();
+			status.textContent = results.length === 1
+				? '1 matching post'
+				: results.length
+					? `${results.length} matching posts`
+					: 'No matching posts';
+			for (const { item } of results) {
+				list.append(renderSearchResult(item, query, iconTemplate));
+			}
+		};
+
+		const reset = () => {
+			input.value = '';
+			clear.hidden = true;
+			close();
+		};
+
+		form.addEventListener('submit', (event) => event.preventDefault());
+		input.addEventListener('focus', () => void prepare());
+		input.addEventListener('input', () => void render());
+		input.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') reset();
+		});
+		clear.addEventListener('click', () => {
+			reset();
+			input.focus();
+		});
+		document.addEventListener('click', (event) => {
+			if (!root.contains(event.target as Node)) close();
+		});
+		installSearchKeyboardNavigation({
+			input,
+			getLinks: () => Array.from(list.querySelectorAll<HTMLAnchorElement>('.search-result-link')),
+			reopen: () => void render(),
+			reset,
+		});
+	}
+</script>

@@ -1,0 +1,24 @@
+---
+import type { Post } from '../lib/content';
+import { formatDate, readingTime } from '../lib/format';
+import { assetUrl } from '../lib/site';
+
+interface Props {
+	post: Post;
+}
+
+const { post } = Astro.props;
+const author = post.data.authors[0];
+const profileImage = assetUrl(author?.profileImage);
+---
+
+<div class="article-meta">
+	{profileImage && <img class="author-avatar author-avatar--large" src={profileImage} alt="" />}
+	<div>
+		{author && <a href={`/author/${author.slug}/`}>{author.name}</a>}
+		<span>
+			<time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+			<span aria-hidden="true"> • </span>{readingTime(post.data.readingTime)}
+		</span>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+---
+import { assetUrl, SITE } from '../lib/site';
+import Search from './Search.astro';
+import SiteNav from './SiteNav.astro';
+
+const heroImage = assetUrl(SITE.coverImage);
+---
+
+<header class="home-hero" style={`--hero-image: url("${heroImage}")`}>
+	<SiteNav mode="overlay" />
+	<div class="home-hero-shade" aria-hidden="true"></div>
+	<div class="home-hero-content inner">
+		<h1>{SITE.title}</h1>
+		<p>{SITE.description}</p>
+		<Search />
+	</div>
+</header>

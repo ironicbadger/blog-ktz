@@ -1,0 +1,81 @@
+---
+import { tagDetails, type Post } from '../lib/content';
+import { formatDate, readingTime } from '../lib/format';
+import { assetUrl, responsiveImage } from '../lib/site';
+
+interface Props {
+	post: Post;
+	large?: boolean;
+	twoUp?: boolean;
+	priority?: boolean;
+}
+
+const { post, large = false, twoUp = false, priority = false } = Astro.props;
+const author = post.data.authors[0];
+const featureImage = responsiveImage(post.data.featureImage);
+const profileImage = assetUrl(author?.profileImage);
+const primaryTag = post.data.primaryTag ? tagDetails(post.data.primaryTag) : undefined;
+---
+
+<article
+	class:list={[
+		'post-card',
+		{
+			'post-card--large': large,
+			'post-card--two-up': twoUp,
+			'post-card--missing-image': !featureImage.src,
+		},
+	]}
+>
+	<a
+		class:list={[
+			'post-card-image-link',
+			{ 'feature-image-placeholder post-card-image-placeholder': !featureImage.src },
+		]}
+		href={`/${post.data.slug}/`}
+		tabindex="-1"
+		aria-hidden="true"
+	>
+		{
+			featureImage.src ? (
+			<img
+				class="post-card-image"
+				src={featureImage.src}
+				srcset={featureImage.srcset}
+				sizes={
+					large
+						? '(min-width: 795px) 640px, 90vw'
+						: twoUp
+							? '(min-width: 1040px) 500px, (min-width: 600px) 45vw, 90vw'
+							: '(min-width: 795px) 320px, 90vw'
+				}
+				alt={post.data.featureImageAlt || post.data.title}
+				loading={priority ? 'eager' : 'lazy'}
+				fetchpriority={priority ? 'high' : 'auto'}
+				decoding="async"
+			/>
+			) : (
+				<span>ktz.</span>
+			)
+		}
+	</a>
+	<div class="post-card-content">
+		<a class="post-card-content-link" href={`/${post.data.slug}/`}>
+			<header class="post-card-header">
+				{post.data.primaryTag && <span class="post-card-tag">{primaryTag?.name || post.data.primaryTag}</span>}
+				<h2>{post.data.title}</h2>
+			</header>
+			{post.data.description && <p class="post-card-excerpt">{post.data.description}</p>}
+		</a>
+		<footer class="post-card-meta">
+			{profileImage && <img class="author-avatar" src={profileImage} alt="" loading="lazy" decoding="async" />}
+			<div>
+				{author && <a href={`/author/${author.slug}/`}>{author.name}</a>}
+				<span>
+					<time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+					<span aria-hidden="true"> • </span>{readingTime(post.data.readingTime)}
+				</span>
+			</div>
+		</footer>
+	</div>
+</article>

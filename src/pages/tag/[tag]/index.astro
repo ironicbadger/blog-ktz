@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ArchiveHeader from '../../../components/ArchiveHeader.astro';
+import PostFeed from '../../../components/PostFeed.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { pageCount, pageSlice, postsWithTag, publicTags, sortPosts } from '../../../lib/content';
+import { canonicalUrl, SITE } from '../../../lib/site';
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	return publicTags().map((tag) => {
+		const tagged = postsWithTag(posts, tag.slug);
+		return { params: { tag: tag.slug }, props: { tag, posts: tagged, pages: pageCount(tagged) } };
+	});
+}
+
+const { tag, posts, pages } = Astro.props;
+const description = tag.description || `A collection of ${posts.length} post${posts.length === 1 ? '' : 's'} tagged ${tag.name}.`;
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: tag.name,
+	url: canonicalUrl(`/tag/${tag.slug}/`),
+	description,
+	isPartOf: { '@type': 'WebSite', name: SITE.title, url: SITE.url },
+};
+---
+
+<BaseLayout title={tag.meta_title || tag.name} description={tag.meta_description || description} image={tag.feature_image} bodyClass="tag-template" structuredData={structuredData}>
+	<ArchiveHeader title={tag.name} description={`${posts.length} posts`} image={tag.feature_image} />
+	<main id="main-content" class="site-main outer">
+		<div class="inner posts">
+			<PostFeed posts={pageSlice(posts, 1)} page={1} nextUrl={pages > 1 ? `/tag/${tag.slug}/page/2/` : undefined} />
+		</div>
+	</main>
+</BaseLayout>

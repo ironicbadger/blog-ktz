@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import PostCard from '../components/PostCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortPosts } from '../lib/content';
+
+const posts = sortPosts(await getCollection('posts')).slice(0, 3);
+---
+
+<BaseLayout title="Page not found" bodyClass="error-template">
+	<main id="main-content" class="error-page outer">
+		<section class="inner error-message">
+			<p>404</p>
+			<h1>Page not found</h1>
+			<a href="/">Go to the front page →</a>
+		</section>
+		<section class="inner">
+			<h2>Latest posts</h2>
+			<div class="read-next-grid">
+				{posts.map((post) => <PostCard post={post} />)}
+			</div>
+		</section>
+	</main>
+</BaseLayout>

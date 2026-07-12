@@ -1,0 +1,184 @@
+---
+import { FileSearch, Search, X } from '@lucide/astro';
+
+interface Props {
+	archiveFilter?: boolean;
+}
+
+const { archiveFilter = false } = Astro.props;
+---
+
+<div
+	class:list={['nav-search', { 'nav-search--archive': archiveFilter }]}
+	data-nav-search
+	data-archive-filter={archiveFilter ? 'true' : undefined}
+>
+	<form class="search-form" role="search">
+		<label class="sr-only" for="nav-search-input">
+			{archiveFilter ? 'Filter archived posts' : 'Search posts'}
+		</label>
+		<Search class="search-icon" aria-hidden="true" size={18} />
+		<input
+			id="nav-search-input"
+			type="search"
+			placeholder={archiveFilter ? 'Filter archive…' : 'Search…'}
+			autocomplete="off"
+			spellcheck="false"
+			aria-controls={archiveFilter ? 'archive-list' : 'nav-search-results'}
+			aria-expanded="false"
+			aria-keyshortcuts="Meta+K Control+K"
+		/>
+		<button class="search-clear" type="button" aria-label="Clear search" hidden>
+			<X aria-hidden="true" size={17} />
+		</button>
+		<kbd class="search-shortcut-hint" aria-hidden="true">⌘ K</kbd>
+	</form>
+	<div id="nav-search-results" class="search-results" role="region" aria-live="polite" hidden>
+		<p class="search-status"></p>
+		<ul></ul>
+	</div>
+	<template data-search-result-icon><FileSearch aria-hidden="true" size={22} /></template>
+</div>
+
+<script>
+	import Fuse from 'fuse.js';
+	import { SEARCH_OPTIONS, type SearchItem } from '../lib/search';
+	import { installSearchKeyboardNavigation, renderSearchResult, searchByRelevance } from '../lib/search-ui';
+
+	const roots = document.querySelectorAll<HTMLElement>('[data-nav-search]');
+	for (const root of roots) {
+		const form = root.querySelector<HTMLFormElement>('form');
+		const input = root.querySelector<HTMLInputElement>('input');
+		const clear = root.querySelector<HTMLButtonElement>('.search-clear');
+		const panel = root.querySelector<HTMLElement>('.search-results');
+		const status = root.querySelector<HTMLElement>('.search-status');
+		const resultsList = root.querySelector<HTMLUListElement>('ul');
+		const iconTemplate = root.querySelector<HTMLTemplateElement>('[data-search-result-icon]');
+		const filtersArchive = root.dataset.archiveFilter === 'true';
+		const archiveList = filtersArchive ? document.querySelector<HTMLOListElement>('#archive-list') : null;
+		const archiveRows = archiveList
+			? Array.from(archiveList.querySelectorAll<HTMLElement>('[data-post-slug]'))
+			: [];
+		const archiveRowsBySlug = new Map(archiveRows.map((row) => [row.dataset.postSlug || '', row]));
+		if (!form || !input || !clear || !panel || !status || !resultsList) continue;
+
+		let fuse: Fuse<SearchItem> | undefined;
+		let loading: Promise<void> | undefined;
+
+		const setOpen = (open: boolean) => {
+			panel.hidden = !open;
+			input.setAttribute('aria-expanded', String(open));
+		};
+
+		const prepare = () => {
+			if (fuse) return Promise.resolve();
+			if (!loading) {
+				status.textContent = 'Loading search…';
+				loading = fetch('/search-index.json')
+					.then((response) => {
+						if (!response.ok) throw new Error('Search index unavailable');
+						return response.json() as Promise<SearchItem[]>;
+					})
+					.then((items) => {
+						fuse = new Fuse(items, SEARCH_OPTIONS);
+					})
+					.catch(() => {
+						status.textContent = 'Search is unavailable right now.';
+						setOpen(true);
+					});
+			}
+			return loading;
+		};
+
+		const restoreArchive = () => {
+			if (!archiveList) return;
+			for (const row of archiveRows) {
+				row.hidden = false;
+				archiveList.append(row);
+			}
+		};
+
+		const close = () => {
+			setOpen(false);
+			resultsList.replaceChildren();
+			status.textContent = '';
+		};
+
+		const render = async () => {
+			const initialQuery = input.value.trim();
+			clear.hidden = initialQuery.length === 0;
+			root.classList.toggle('nav-search--active', initialQuery.length > 0);
+			if (!initialQuery) {
+				if (filtersArchive) restoreArchive();
+				return close();
+			}
+
+			setOpen(true);
+			await prepare();
+			if (!fuse) return;
+			const query = input.value.trim();
+			if (!query) {
+				if (filtersArchive) restoreArchive();
+				return close();
+			}
+
+			if (filtersArchive) {
+				const results = searchByRelevance(fuse, query);
+				for (const row of archiveRows) row.hidden = true;
+				let visible = 0;
+				for (const { item } of results) {
+					const row = archiveRowsBySlug.get(item.slug);
+					if (!row || !archiveList) continue;
+					row.hidden = false;
+					archiveList.append(row);
+					visible += 1;
+				}
+				status.textContent = visible === 1 ? '1 matching post' : `${visible} matching posts`;
+				return;
+			}
+
+			const results = searchByRelevance(fuse, query);
+			resultsList.replaceChildren();
+			status.textContent = results.length === 1
+				? '1 matching post'
+				: results.length
+					? `${results.length} matching posts`
+					: 'No matching posts';
+			for (const { item } of results) {
+				resultsList.append(renderSearchResult(item, query, iconTemplate));
+			}
+		};
+
+		const reset = () => {
+			input.value = '';
+			clear.hidden = true;
+			root.classList.remove('nav-search--active');
+			if (filtersArchive) restoreArchive();
+			close();
+		};
+
+		form.addEventListener('submit', (event) => event.preventDefault());
+		input.addEventListener('focus', () => void prepare());
+		input.addEventListener('input', () => void render());
+		input.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') reset();
+		});
+		clear.addEventListener('click', () => {
+			reset();
+			input.focus();
+		});
+		document.addEventListener('click', (event) => {
+			if (!root.contains(event.target as Node)) setOpen(false);
+		});
+		installSearchKeyboardNavigation({
+			input,
+			getLinks: () => filtersArchive
+				? Array.from(
+					archiveList?.querySelectorAll<HTMLAnchorElement>('.archive-row:not([hidden]) .archive-title') ?? [],
+				)
+				: Array.from(resultsList.querySelectorAll<HTMLAnchorElement>('.search-result-link')),
+			reopen: () => void render(),
+			reset,
+		});
+	}
+</script>

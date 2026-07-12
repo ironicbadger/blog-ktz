@@ -1,0 +1,2665 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-09T20:18:01.852Z",
+  "sourceHost": "meeseeks",
+  "sourceRoot": "/mnt/rust/photos/alex/images/2011",
+  "ghostReferenceDatabase": "/mnt/nvmeu2/appdata/backups/ktz-blog/data/ghost.db",
+  "notes": [
+    "Read-only matching against Immich previews and live Ghost assets; no remote files were modified or copied.",
+    "Source paths are absolute paths on meeseeks.",
+    "Matched originals should be rendered with orientation and any XMP sidecar edits applied; public derivatives should strip GPS/private EXIF metadata."
+  ],
+  "summary": {
+    "totalGhostPaths": 143,
+    "uniqueGhostPaths": 143,
+    "matchedSourcePaths": 134,
+    "keepExistingGhostAssets": 9,
+    "confidence": {
+      "high": 134,
+      "none": 9
+    },
+    "matchMethods": {
+      "exactStem": 17,
+      "perceptualPhash": 106,
+      "cropAware": 11,
+      "unmatched": 9
+    }
+  },
+  "matches": [
+    {
+      "ghostPath": "/content/images/2019/04/image.png",
+      "postSlug": "the-first-of-the-official-wedding-pictures-to-come",
+      "publishedAt": "2011-08-30",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/0921 - Wedding (Official)/20120208_359.jpg",
+      "matchMethod": "crop-aware-correlation+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.713,
+        "cropCandidateGap": 0.026
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2017/08/tumblr_lqsgfjmDAc1r2w5ceo1_1280-1.png",
+      "postSlug": "look-what-just-arrived-thank-you-mr-postman",
+      "publishedAt": "2011-08-31",
+      "role": "feature",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 16,
+        "composite": 161,
+        "candidateGap": 2,
+        "dayDelta": 1456
+      },
+      "keepExistingReason": "No visual match in the 2011 library; this is an InterRail-pass document image. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2019/04/tumblr_lr03eaDkq91r2w5ceo1_1280-1.jpg",
+      "postSlug": "jensen-button-on-deansgate-on-august-bank",
+      "publishedAt": "2011-09-04",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/08 - Jensen on Deansgate/20110829_013.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 2,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 4,
+        "composite": 24,
+        "candidateGap": 124,
+        "dayDelta": 6
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2019/04/image-1.png",
+      "postSlug": "jensen-button-on-deansgate-on-august-bank",
+      "publishedAt": "2011-09-04",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/08 - Jensen on Deansgate/20110829_024.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 1,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 4,
+        "composite": 24,
+        "candidateGap": 130,
+        "dayDelta": 6
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2019/04/tumblr_lr03eaDkq91r2w5ceo1_1280.jpg",
+      "postSlug": "jensen-button-on-deansgate-on-august-bank",
+      "publishedAt": "2011-09-04",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/08 - Jensen on Deansgate/20110829_013.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 2,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 4,
+        "composite": 24,
+        "candidateGap": 124,
+        "dayDelta": 6
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2019/04/tumblr_lr03eaDkq91r2w5ceo2_1280.jpg",
+      "postSlug": "jensen-button-on-deansgate-on-august-bank",
+      "publishedAt": "2011-09-04",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/08 - Jensen on Deansgate/20110829_021.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 2,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 13,
+        "candidateGap": 86,
+        "dayDelta": 6
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2019/04/tumblr_lr03eaDkq91r2w5ceo4_1280.jpg",
+      "postSlug": "jensen-button-on-deansgate-on-august-bank",
+      "publishedAt": "2011-09-04",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/08 - Jensen on Deansgate/20110829_048.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 4,
+        "composite": 13,
+        "candidateGap": 102,
+        "dayDelta": 6
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/packed-and-ready.jpg",
+      "postSlug": "all-that-stuff-is-now-in-the-rucksack-ready-for",
+      "publishedAt": "2011-09-04",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/Packing/20110904_003.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 2,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 3,
+        "composite": 15,
+        "candidateGap": 138,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/honeymon-cat-and-lou.jpg",
+      "postSlug": "just-enjoying-some-hospitality-in-norfolk-and",
+      "publishedAt": "2011-09-05",
+      "role": "feature",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 20,
+        "composite": 157,
+        "candidateGap": 3,
+        "dayDelta": 21
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely supplied by friends or captured on another camera. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/honeymoon-john-bbq.jpg",
+      "postSlug": "just-enjoying-some-hospitality-in-norfolk-and",
+      "publishedAt": "2011-09-05",
+      "role": "body1",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 18,
+        "composite": 145,
+        "candidateGap": 6,
+        "dayDelta": 3
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely supplied by friends or captured on another camera. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/honeymoon-geneva.png",
+      "postSlug": "honeymoon-geneva",
+      "publishedAt": "2011-09-07",
+      "role": "feature",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 20,
+        "composite": 157,
+        "candidateGap": 1,
+        "dayDelta": 1
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely a phone-derived or screenshot image. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110907_080.jpg",
+      "postSlug": "made-it-yvoire-this-is-the-view-from-our-hotel",
+      "publishedAt": "2011-09-07",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_080.ARW",
+      "matchMethod": "exact-stem+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "phash": 24,
+        "averageHash": 12,
+        "differenceHash": 40,
+        "verticalDifferenceHash": 19,
+        "composite": 174,
+        "candidateGap": -34,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/4.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_068.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 4,
+        "verticalDifferenceHash": 2,
+        "composite": 15,
+        "candidateGap": 86,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_004.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 12,
+        "candidateGap": 131,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/2.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_027.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 10,
+        "differenceHash": 5,
+        "verticalDifferenceHash": 4,
+        "composite": 51,
+        "candidateGap": 100,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_036.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 3,
+        "differenceHash": 8,
+        "verticalDifferenceHash": 2,
+        "composite": 29,
+        "candidateGap": 84,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/8.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_081.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 15,
+        "verticalDifferenceHash": 9,
+        "composite": 32,
+        "candidateGap": 1,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/5.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_063.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 12,
+        "averageHash": 3,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 7,
+        "composite": 60,
+        "candidateGap": 78,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/6.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_052.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 3,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 1,
+        "composite": 23,
+        "candidateGap": 127,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/7.jpg",
+      "postSlug": "we-woke-up-this-morning-in-wilby-norfolk-and-are",
+      "publishedAt": "2011-09-07",
+      "role": "body7",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/7-9 Norfolk - Yvoire/20110907_076.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 3,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 2,
+        "composite": 15,
+        "candidateGap": 120,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/andermatt-1.png",
+      "postSlug": "lunch-in-andermatt-switzerland-very-expensive",
+      "publishedAt": "2011-09-08",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/8-9 Yvoire - Interlaken via Andermatt/20110908_229.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 2,
+        "composite": 13,
+        "candidateGap": 114,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1.png",
+      "postSlug": "1-taxi-1-ferry-and-6-trains-later-we-are-just",
+      "publishedAt": "2011-09-08",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/8-9 Yvoire - Interlaken via Andermatt/20110908_246.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 6,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 2,
+        "composite": 43,
+        "candidateGap": 66,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/arth.png",
+      "postSlug": "lunch-in-arth-goldau-switzerland-as-we-await-our",
+      "publishedAt": "2011-09-09",
+      "role": "feature",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 18,
+        "composite": 144,
+        "candidateGap": 4,
+        "dayDelta": 17
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely a phone-derived or externally sourced image. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-2.jpg",
+      "postSlug": "hello-readers-well-what-an-adventure-we-had",
+      "publishedAt": "2011-09-10",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/9-9 Interlaken - Arona (Dormelletto)/20110909_328.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 6,
+        "averageHash": 3,
+        "differenceHash": 17,
+        "verticalDifferenceHash": 4,
+        "composite": 48,
+        "candidateGap": 107,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/6-1.jpg",
+      "postSlug": "hello-readers-well-what-an-adventure-we-had",
+      "publishedAt": "2011-09-10",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/10-9 Dormelletto - Como/20110910_401.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 7,
+        "verticalDifferenceHash": 12,
+        "composite": 35,
+        "candidateGap": 63,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/5-1.jpg",
+      "postSlug": "hello-readers-well-what-an-adventure-we-had",
+      "publishedAt": "2011-09-10",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/10-9 Dormelletto - Como/20110910_391.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 4,
+        "differenceHash": 13,
+        "verticalDifferenceHash": 11,
+        "composite": 60,
+        "candidateGap": 70,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/4-1.jpg",
+      "postSlug": "hello-readers-well-what-an-adventure-we-had",
+      "publishedAt": "2011-09-10",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/10-9 Dormelletto - Como/20110910_369.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 10,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 1,
+        "composite": 46,
+        "candidateGap": 109,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3-1.jpg",
+      "postSlug": "hello-readers-well-what-an-adventure-we-had",
+      "publishedAt": "2011-09-10",
+      "role": "body4",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 22,
+        "composite": 159,
+        "candidateGap": 1,
+        "dayDelta": 13
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely captured on another camera. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1.png",
+      "postSlug": "not-a-bad-afternoons-entertainment-have-the",
+      "publishedAt": "2011-09-11",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_512.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 1,
+        "composite": 12,
+        "candidateGap": 121,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-1.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_585.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 3,
+        "differenceHash": 4,
+        "verticalDifferenceHash": 3,
+        "composite": 18,
+        "candidateGap": 116,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-4.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_459.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 4,
+        "composite": 13,
+        "candidateGap": 104,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-2.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_555.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 2,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 35,
+        "candidateGap": 115,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-3.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_540.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 8,
+        "candidateGap": 107,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-5.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_546.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 6,
+        "averageHash": 6,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 1,
+        "composite": 34,
+        "candidateGap": 113,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1-6.jpg",
+      "postSlug": "im-sure-you-all-know-by-now-that-we-spent-today",
+      "publishedAt": "2011-09-11",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/11-9 Monza, Formula 1/20110911_559.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 10,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 43,
+        "candidateGap": 101,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-4.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_683.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 2,
+        "candidateGap": 177,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/5-2.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_641.ARW",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.66,
+        "cropCandidateGap": 0.183
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/6-2.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_659.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 7,
+        "differenceHash": 7,
+        "verticalDifferenceHash": 1,
+        "composite": 23,
+        "candidateGap": 94,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/7-1.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_671.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 3,
+        "differenceHash": 4,
+        "verticalDifferenceHash": 3,
+        "composite": 42,
+        "candidateGap": 105,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-3.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_683.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 2,
+        "candidateGap": 177,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/2-1.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_632.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 3,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 5,
+        "composite": 25,
+        "candidateGap": 127,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3-2.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_729.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 6,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 27,
+        "candidateGap": 130,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/8-1.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body7",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_710.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 10,
+        "averageHash": 5,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 48,
+        "candidateGap": 70,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/9.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body8",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_735.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 1,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 2,
+        "composite": 22,
+        "candidateGap": 118,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/4-2.jpg",
+      "postSlug": "lake-como-to-poschiavo",
+      "publishedAt": "2011-09-12",
+      "role": "body9",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110912_696.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 3,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 6,
+        "candidateGap": 136,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/poschiavo.png",
+      "postSlug": "good-morning-poschiavo",
+      "publishedAt": "2011-09-13",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/12-9 Como - Poschiavo/20110913_750.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 3,
+        "composite": 22,
+        "candidateGap": 110,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_771.jpg",
+      "postSlug": "good-morning-poschiavo",
+      "publishedAt": "2011-09-13",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_771.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 2,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 0,
+        "composite": 4,
+        "candidateGap": 146,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_813.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_813.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 3,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 3,
+        "composite": 40,
+        "candidateGap": 105,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_765.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_765.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 10,
+        "averageHash": 3,
+        "differenceHash": 5,
+        "verticalDifferenceHash": 8,
+        "composite": 56,
+        "candidateGap": 85,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_808.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_808.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 4,
+        "differenceHash": 10,
+        "verticalDifferenceHash": 5,
+        "composite": 51,
+        "candidateGap": 77,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_768.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_768.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 3,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 20,
+        "candidateGap": 106,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_752.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_752.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 4,
+        "verticalDifferenceHash": 4,
+        "composite": 24,
+        "candidateGap": 132,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110913_785.jpg",
+      "postSlug": "milano-centrale",
+      "publishedAt": "2011-09-13",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_785.ARW",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 1,
+        "composite": 18,
+        "candidateGap": 133,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/dome.png",
+      "postSlug": "arrived-safely-in-firenze-florence-found-our",
+      "publishedAt": "2011-09-13",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_829.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 3,
+        "composite": 14,
+        "candidateGap": 137,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f1.jpg",
+      "postSlug": "a-ha-free-wifi-stumbled-upon-by",
+      "publishedAt": "2011-09-13",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_828.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 4,
+        "composite": 14,
+        "candidateGap": 109,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f2.jpg",
+      "postSlug": "a-ha-free-wifi-stumbled-upon-by",
+      "publishedAt": "2011-09-13",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_789.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 1,
+        "composite": 2,
+        "candidateGap": 140,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f5.jpg",
+      "postSlug": "a-ha-free-wifi-stumbled-upon-by",
+      "publishedAt": "2011-09-13",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_763.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 2,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 3,
+        "composite": 14,
+        "candidateGap": 97,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f4.jpg",
+      "postSlug": "a-ha-free-wifi-stumbled-upon-by",
+      "publishedAt": "2011-09-13",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_841.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 10,
+        "candidateGap": 132,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/f3.jpg",
+      "postSlug": "a-ha-free-wifi-stumbled-upon-by",
+      "publishedAt": "2011-09-13",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/13-9 Poschiavo - Florence/20110913_803.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 3,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 7,
+        "composite": 43,
+        "candidateGap": 96,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110914_932.jpg",
+      "postSlug": "barbara-italian-tour-guide-i-studied-tourism-at",
+      "publishedAt": "2011-09-14",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_932.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 1,
+        "candidateGap": 149,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/lunch.png",
+      "postSlug": "lunch-with-a-view-we-are-being-treated-to-a",
+      "publishedAt": "2011-09-14",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_894.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 11,
+        "candidateGap": 129,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/pisa.png",
+      "postSlug": "no-wifi-again-more-pics-from-today-when-we-get",
+      "publishedAt": "2011-09-14",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_926.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 140,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/ticket.png",
+      "postSlug": "hi-ho-hi-ho-its-off-the-rome-we-go-we-are",
+      "publishedAt": "2011-09-15",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110915_937.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 3,
+        "candidateGap": 150,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/t3.jpg",
+      "postSlug": "81-hits-a-day-wow-thats-a-lot-more-than-i-was",
+      "publishedAt": "2011-09-15",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_870.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 3,
+        "composite": 14,
+        "candidateGap": 114,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/t2-1.jpg",
+      "postSlug": "81-hits-a-day-wow-thats-a-lot-more-than-i-was",
+      "publishedAt": "2011-09-15",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_900.JPG",
+      "matchMethod": "crop-aware-correlation+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.644,
+        "cropCandidateGap": 0.045
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/t4.jpg",
+      "postSlug": "81-hits-a-day-wow-thats-a-lot-more-than-i-was",
+      "publishedAt": "2011-09-15",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_890.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 1,
+        "candidateGap": 156,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/t6.jpg",
+      "postSlug": "81-hits-a-day-wow-thats-a-lot-more-than-i-was",
+      "publishedAt": "2011-09-15",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_907.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 2,
+        "candidateGap": 157,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/t5-1.jpg",
+      "postSlug": "81-hits-a-day-wow-thats-a-lot-more-than-i-was",
+      "publishedAt": "2011-09-15",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/14-9 Best of Tuscany Tour/20110914_929.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.762,
+        "cropCandidateGap": 0.388
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/4-3.jpg",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_954.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.666,
+        "cropCandidateGap": 0.109
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-5.jpg",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_963.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 0,
+        "composite": 3,
+        "candidateGap": 152,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/2-2.jpg",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_990.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 10,
+        "candidateGap": 138,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3-3.jpg",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_986.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 0,
+        "composite": 3,
+        "candidateGap": 159,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110916_1010.JPG",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_1010.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 1,
+        "candidateGap": 129,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/5-3.jpg",
+      "postSlug": "blog-post-oclock-it-is-then-ive-been-looking",
+      "publishedAt": "2011-09-16",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/16-9 Roman Rome/20110916_1008.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 9,
+        "candidateGap": 139,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/11.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/17-9 The Vatican/20110917_1027.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 9,
+        "candidateGap": 143,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/13.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body1",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 18,
+        "composite": 147,
+        "candidateGap": 7,
+        "dayDelta": 6
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely captured on another camera during the Vatican visit. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/14.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body2",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 20,
+        "composite": 153,
+        "candidateGap": 1,
+        "dayDelta": 3
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely captured on another camera during the Vatican visit. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2020/07/12.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/17-9 The Vatican/20110917_1029.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 3,
+        "candidateGap": 134,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/15.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/17-9 The Vatican/20110917_1032.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 5,
+        "composite": 6,
+        "candidateGap": 120,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/16.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/17-9 The Vatican/20110917_1031.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.737,
+        "cropCandidateGap": 0.287
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/17.jpg",
+      "postSlug": "the-vatican",
+      "publishedAt": "2011-09-17",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/17-9 The Vatican/20110917_1035.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 1,
+        "candidateGap": 148,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110918_1036.JPG",
+      "postSlug": "train-strike",
+      "publishedAt": "2011-09-18",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1036.JPG",
+      "matchMethod": "exact-stem+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "phash": 32,
+        "averageHash": 30,
+        "differenceHash": 32,
+        "verticalDifferenceHash": 35,
+        "composite": 225,
+        "candidateGap": -69,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110918_1047.JPG",
+      "postSlug": "catherine-at-herculaneum-i-like-being-the-same",
+      "publishedAt": "2011-09-18",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1047.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 156,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110918_1049.JPG",
+      "postSlug": "catherine-at-herculaneum-i-like-being-the-same",
+      "publishedAt": "2011-09-18",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1049.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 152,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/26.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1089.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 2,
+        "candidateGap": 150,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/21.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1050.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 4,
+        "candidateGap": 128,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/22.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1062.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 157,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/24.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1072.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 11,
+        "candidateGap": 122,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/25.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1082.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 1,
+        "candidateGap": 143,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/27.jpg",
+      "postSlug": "hi-chaps-tonight-will-be-the-last-proper-entry",
+      "publishedAt": "2011-09-18",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110918_1104.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 1,
+        "composite": 10,
+        "candidateGap": 130,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110919_1123.JPG",
+      "postSlug": "come-rain-or-shine-were-english-well-bloody",
+      "publishedAt": "2011-09-19",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/18-9 Herculaneum and Capri/20110919_1123.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 145,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110919_1125.JPG",
+      "postSlug": "11-hours-later",
+      "publishedAt": "2011-09-19",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110919_1125.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 2,
+        "candidateGap": 133,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110920_1135.JPG",
+      "postSlug": "relaxing-in-the-rain",
+      "publishedAt": "2011-09-20",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110920_1135.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 0,
+        "composite": 2,
+        "candidateGap": 125,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-1.png",
+      "postSlug": "our-italian-residence-for-the-next-few-days-how",
+      "publishedAt": "2011-09-20",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110920_1138.JPG",
+      "matchMethod": "crop-aware-correlation+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.607,
+        "cropCandidateGap": 0.214
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/2.png",
+      "postSlug": "a-lazy-day",
+      "publishedAt": "2011-09-21",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110921_1173.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 1,
+        "composite": 4,
+        "candidateGap": 137,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3.png",
+      "postSlug": "challenge-accepted",
+      "publishedAt": "2011-09-22",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110921_1176.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 9,
+        "verticalDifferenceHash": 3,
+        "composite": 20,
+        "candidateGap": 113,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/20110922_1181.jpg",
+      "postSlug": "our-final-goodbye-to-italy",
+      "publishedAt": "2011-09-22",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110922_1181.JPG",
+      "matchMethod": "exact-stem",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 131,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/38.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110922_1195.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 6,
+        "averageHash": 1,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 2,
+        "composite": 30,
+        "candidateGap": 106,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/36.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110922_1192.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 8,
+        "candidateGap": 113,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/37.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/22-9 Ancona - Innsbruck/20110922_1187.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 1,
+        "candidateGap": 130,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/32.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110921_1148.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 13,
+        "differenceHash": 5,
+        "verticalDifferenceHash": 7,
+        "composite": 33,
+        "candidateGap": 111,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/33.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110921_1150.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 6,
+        "averageHash": 1,
+        "differenceHash": 12,
+        "verticalDifferenceHash": 17,
+        "composite": 54,
+        "candidateGap": 66,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/34.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110920_1133.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 3,
+        "candidateGap": 126,
+        "dayDelta": 2
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/35.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/20-9 Apricots House/20110919_1129.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.845,
+        "cropCandidateGap": 0.082
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/31.jpg",
+      "postSlug": "innsbruck",
+      "publishedAt": "2011-09-22",
+      "role": "body7",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/21-9 Monte Sibilini National Park/20110921_1155.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 5,
+        "verticalDifferenceHash": 4,
+        "composite": 10,
+        "candidateGap": 127,
+        "dayDelta": 1
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/42.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1240.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 2,
+        "composite": 4,
+        "candidateGap": 115,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/45.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1219.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 8,
+        "candidateGap": 121,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/46.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1209.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 11,
+        "candidateGap": 98,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/47.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1206.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 8,
+        "averageHash": 4,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 5,
+        "composite": 43,
+        "candidateGap": 77,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/41.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1244.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.627,
+        "cropCandidateGap": 0.167
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/43.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1238.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 5,
+        "composite": 14,
+        "candidateGap": 124,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/44.jpg",
+      "postSlug": "innsbruck-to-munich",
+      "publishedAt": "2011-09-23",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/23-9 Innsbruck - Munich/20110923_1230.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 1,
+        "candidateGap": 122,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/123.png",
+      "postSlug": "sleeper-train-is-a-go-private-double-room-very",
+      "publishedAt": "2011-09-23",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110923_1245.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 3,
+        "candidateGap": 144,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/59.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1286.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 2,
+        "candidateGap": 141,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/51.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1246.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 9,
+        "candidateGap": 139,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/52.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1258.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 11,
+        "verticalDifferenceHash": 9,
+        "composite": 20,
+        "candidateGap": 115,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/53-1.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1260.JPG",
+      "matchMethod": "crop-aware-correlation",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.753,
+        "cropCandidateGap": 0.095
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/55.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1269.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 0,
+        "candidateGap": 153,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/54.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1264.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 2,
+        "candidateGap": 157,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/56.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1275.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 2,
+        "candidateGap": 145,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/57.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body7",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1279.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 0,
+        "composite": 11,
+        "candidateGap": 132,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/58.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body8",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1282.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 1,
+        "composite": 2,
+        "candidateGap": 144,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/591.jpg",
+      "postSlug": "munch-to-berlin-sleeper-train",
+      "publishedAt": "2011-09-24",
+      "role": "body9",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/24-9 Berlin (Wall, Stadium)/20110924_1292.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 16,
+        "candidateGap": 133,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2017/08/tumblr_ls3a3e9NA71r2w5ceo5_1280.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1319.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 4,
+        "candidateGap": 113,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/1-6.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1297.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 0,
+        "composite": 8,
+        "candidateGap": 146,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/4-4.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1314.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 1,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 4,
+        "composite": 7,
+        "candidateGap": 132,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/2-3.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1299.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 1,
+        "candidateGap": 136,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/3-4.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1301.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 2,
+        "candidateGap": 142,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/6-3.jpg",
+      "postSlug": "this-post-is-brought-to-in-association-with",
+      "publishedAt": "2011-09-25",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/25-9 Berlin (Bauhaus)/20110925_1324.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 0,
+        "composite": 2,
+        "candidateGap": 158,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2017/08/tumblr_ls5fxb3Npr1r2w5ceo5_1280.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1411.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 2,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 4,
+        "composite": 22,
+        "candidateGap": 122,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/21-1.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1329.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 1,
+        "candidateGap": 135,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/22-1.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1376.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 2,
+        "candidateGap": 142,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/23.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1377.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 0,
+        "composite": 9,
+        "candidateGap": 133,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/24-1.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1380.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 4,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 17,
+        "candidateGap": 136,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/26-2.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1422.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 1,
+        "composite": 1,
+        "candidateGap": 147,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/27-1.jpg",
+      "postSlug": "good-evening-everybody-so-it-has-come-the-final",
+      "publishedAt": "2011-09-26",
+      "role": "body6",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/26-9 Paris (Louvre, Champs)/20110926_1431.JPG",
+      "matchMethod": "crop-aware-correlation+manual-visual-verification",
+      "confidence": "high",
+      "distances": {
+        "cropCorrelation": 0.753,
+        "cropCandidateGap": 0.02
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2017/08/tumblr_ls6mkyCIH31r2w5ceo1_1280.png",
+      "postSlug": "the-most-beautiful-starbucks-around-opera-in",
+      "publishedAt": "2011-09-27",
+      "role": "feature",
+      "sourcePath": null,
+      "matchMethod": "unmatched-after-phash-and-crop-search",
+      "confidence": "none",
+      "distances": {
+        "phash": 22,
+        "composite": 147,
+        "candidateGap": 2,
+        "dayDelta": 16
+      },
+      "keepExistingReason": "No visual match in the 2011 library; likely a phone-derived Tumblr image from the Paris Starbucks stop. Keep the existing Ghost asset."
+    },
+    {
+      "ghostPath": "/content/images/2017/08/tumblr_ls78sqVr181r2w5ceo6_1280.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "feature",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1474.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 2,
+        "composite": 2,
+        "candidateGap": 142,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/34-1.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "body1",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1468.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 2,
+        "differenceHash": 3,
+        "verticalDifferenceHash": 3,
+        "composite": 16,
+        "candidateGap": 132,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/35-1.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "body2",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1473.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 1,
+        "verticalDifferenceHash": 2,
+        "composite": 11,
+        "candidateGap": 114,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/31-1.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "body3",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1438.JPG",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 0,
+        "differenceHash": 2,
+        "verticalDifferenceHash": 1,
+        "composite": 11,
+        "candidateGap": 146,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/33-1.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "body4",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1455.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 2,
+        "averageHash": 3,
+        "differenceHash": 5,
+        "verticalDifferenceHash": 8,
+        "composite": 24,
+        "candidateGap": 123,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    },
+    {
+      "ghostPath": "/content/images/2020/07/123.jpg",
+      "postSlug": "it-is-perhaps-fitting-that-tonights-final",
+      "publishedAt": "2011-09-27",
+      "role": "body5",
+      "sourcePath": "/mnt/rust/photos/alex/images/2011/09 - Honeymoon/27-9 Paris - London/20110927_1474.ARW",
+      "matchMethod": "perceptual-phash",
+      "confidence": "high",
+      "distances": {
+        "phash": 0,
+        "averageHash": 0,
+        "differenceHash": 0,
+        "verticalDifferenceHash": 3,
+        "composite": 3,
+        "candidateGap": 142,
+        "dayDelta": 0
+      },
+      "keepExistingReason": null
+    }
+  ]
+}

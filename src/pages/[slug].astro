@@ -1,0 +1,117 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ArticleMeta from '../components/ArticleMeta.astro';
+import ReadNext from '../components/ReadNext.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortPosts, tagDetails, type ContentPage, type Post } from '../lib/content';
+import { canonicalUrl, responsiveImage, SITE } from '../lib/site';
+
+type EntryProps =
+	| { kind: 'post'; entry: Post; allPosts: Post[] }
+	| { kind: 'page'; entry: ContentPage; allPosts: Post[] };
+
+export async function getStaticPaths() {
+	const posts = sortPosts(await getCollection('posts'));
+	const pages = await getCollection('pages');
+	return [
+		...posts.map((entry) => ({ params: { slug: entry.data.slug }, props: { kind: 'post', entry, allPosts: posts } })),
+		...pages.map((entry) => ({ params: { slug: entry.data.slug }, props: { kind: 'page', entry, allPosts: posts } })),
+	];
+}
+
+const props = Astro.props as EntryProps;
+const { entry, kind, allPosts } = props;
+const { Content } = await render(entry as CollectionEntry<'posts'>);
+const featureImage = responsiveImage(entry.data.featureImage);
+const canonical = entry.data.canonicalUrl || canonicalUrl(`/${entry.data.slug}/`);
+const postData = kind === 'post' ? (entry as Post).data : undefined;
+const primaryTag = postData?.primaryTag ? tagDetails(postData.primaryTag) : undefined;
+
+let related: Post[] = [];
+let structuredData: Record<string, unknown>;
+
+if (kind === 'post') {
+	const current = entry as Post;
+	const sameTag = current.data.primaryTag
+		? allPosts.filter((post) => post.id !== current.id && post.data.tags.includes(current.data.primaryTag!))
+		: [];
+	const chronological = allPosts.filter((post) => post.id !== current.id);
+	related = [...sameTag, ...chronological].filter((post, index, items) => items.findIndex(({ id }) => id === post.id) === index).slice(0, 3);
+	structuredData = {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: current.data.title,
+		description: current.data.description,
+		image: featureImage.src,
+		datePublished: current.data.publishedAt.toISOString(),
+		dateModified: current.data.updatedAt.toISOString(),
+		mainEntityOfPage: canonical,
+		author: current.data.authors.map((author) => ({
+			'@type': 'Person',
+			name: author.name,
+			url: canonicalUrl(`/author/${author.slug}/`),
+		})),
+		publisher: { '@type': 'Organization', name: SITE.title, url: SITE.url },
+	};
+} else {
+	structuredData = {
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: entry.data.title,
+		url: canonical,
+		description: entry.data.description,
+	};
+}
+---
+
+<BaseLayout
+	title={entry.data.seo?.title || entry.data.title}
+	description={entry.data.seo?.description || entry.data.description}
+	image={entry.data.seo?.image || entry.data.featureImage}
+	canonical={canonical}
+	type={kind === 'post' ? 'article' : 'website'}
+	bodyClass={kind === 'post' ? 'post-template' : 'page-template'}
+	structuredData={structuredData}
+	exactTitle
+	publishedTime={postData?.publishedAt}
+	modifiedTime={postData?.updatedAt}
+	tags={postData?.tags.map((tag) => tagDetails(tag)?.name || tag)}
+>
+	<main id="main-content" class:list={['site-main', 'outer', { 'article--no-image': !featureImage.src }]}>
+		<article class="article inner">
+			<header class="article-header">
+				{kind === 'post' && postData?.primaryTag && (
+					<a class="article-tag" href={`/tag/${postData.primaryTag}/`}>{primaryTag?.name || postData.primaryTag}</a>
+				)}
+				<h1>{entry.data.title}</h1>
+				{entry.data.customExcerpt && <p class="article-excerpt">{entry.data.customExcerpt}</p>}
+				{kind === 'post' && <ArticleMeta post={entry as Post} />}
+			</header>
+			{featureImage.src ? (
+				<figure class="article-feature-image">
+					<img
+						src={featureImage.src}
+						srcset={featureImage.srcset}
+						sizes="(min-width: 1100px) 1040px, 90vw"
+						alt={entry.data.featureImageAlt || entry.data.title}
+						fetchpriority="high"
+						decoding="async"
+					/>
+					{entry.data.featureImageCaption && <figcaption set:html={entry.data.featureImageCaption} />}
+				</figure>
+			) : kind === 'post' ? (
+				<div
+					class="article-feature-image feature-image-placeholder article-feature-placeholder"
+					role="img"
+					aria-label={`Placeholder image for ${entry.data.title}`}
+				>
+					<span aria-hidden="true">ktz.</span>
+				</div>
+			) : null}
+			<div class="article-content">
+				<Content />
+			</div>
+		</article>
+	</main>
+	{kind === 'post' && <ReadNext posts={related} primaryTag={postData?.primaryTag} />}
+</BaseLayout>

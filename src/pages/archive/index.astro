@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import ArchiveHeader from '../../components/ArchiveHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortPosts, tagDetails } from '../../lib/content';
+import { formatDate } from '../../lib/format';
+import { canonicalUrl, SITE } from '../../lib/site';
+
+const posts = sortPosts(await getCollection('posts'));
+const description = `A chronological list of all ${posts.length} posts.`;
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: 'Archive',
+	url: canonicalUrl('/archive/'),
+	description,
+	isPartOf: {
+		'@type': 'WebSite',
+		name: SITE.title,
+		url: canonicalUrl('/'),
+	},
+};
+---
+
+<BaseLayout title="Archive" description={description} bodyClass="archive-template" structuredData={structuredData}>
+	<ArchiveHeader title="Archive" description={`${posts.length} posts`} />
+	<main id="main-content" class="archive-main outer">
+		<div class="inner">
+			<ol id="archive-list" class="archive-list">
+				{posts.map((post) => (
+					<li class="archive-row" data-post-slug={post.data.slug}>
+						<time class="archive-date" datetime={post.data.publishedAt.toISOString()}>
+							{formatDate(post.data.publishedAt)}
+						</time>
+						<a class="archive-title" href={`/${post.data.slug}/`}>{post.data.title}</a>
+						<div class="archive-tags" aria-label={`Tags for ${post.data.title}`}>
+							{post.data.tags.map((tag) => (
+								<a class="archive-tag" href={`/tag/${tag}/`}>{tagDetails(tag)?.name || tag}</a>
+							))}
+						</div>
+					</li>
+				))}
+			</ol>
+		</div>
+	</main>
+</BaseLayout>
