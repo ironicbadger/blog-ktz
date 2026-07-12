@@ -1,4 +1,4 @@
-import { lstat, readlink, rm, unlink } from 'node:fs/promises';
+import { lstat, readlink, readdir, rm, unlink } from 'node:fs/promises';
 import path from 'node:path';
 
 const localContentLink = path.join('public', 'content');
@@ -18,7 +18,11 @@ if (contentStats) {
 // Astro's content cache does not include PUBLIC_ASSET_BASE_URL in its cache key.
 // Clear only generated caches so switching between local and R2 builds cannot
 // leave stale asset URLs in rendered Markdown.
+const astroCacheEntries = await readdir('.astro').catch((error) => {
+	if (error?.code === 'ENOENT') return [];
+	throw error;
+});
 await Promise.all([
-  rm('.astro', { recursive: true, force: true }),
-  rm('node_modules/.astro', { recursive: true, force: true }),
+	...astroCacheEntries.map((entry) => rm(path.join('.astro', entry), { recursive: true, force: true })),
+	rm('node_modules/.astro', { recursive: true, force: true }),
 ]);

@@ -1,5 +1,22 @@
 # syntax=docker/dockerfile:1.7
 
+FROM node:22-alpine AS tooling
+
+WORKDIR /opt/tooling
+
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund \
+	&& mv node_modules /node_modules \
+	&& mkdir -p /home/tooling /config /workspace/node_modules /workspace/dist /workspace/.astro \
+	&& chmod 0777 /home/tooling /config /workspace/node_modules /workspace/dist /workspace/.astro
+
+ENV PATH="/node_modules/.bin:${PATH}"
+
+WORKDIR /workspace
+
+CMD ["node", "--version"]
+
+
 FROM node:22-alpine AS build
 
 WORKDIR /app
@@ -33,4 +50,3 @@ HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \
 
 ENTRYPOINT ["nginx"]
 CMD ["-g", "daemon off;"]
-

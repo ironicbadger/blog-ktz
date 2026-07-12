@@ -1,6 +1,33 @@
 name: ktz-blog
 
 services:
+  tools:
+    profiles: [tools]
+    build:
+      context: .
+      target: tooling
+    image: ktz-blog-tools:local
+    init: true
+    working_dir: /workspace
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    environment:
+      HOME: /home/tooling
+      XDG_CONFIG_HOME: /config
+      TZ: America/New_York
+      CLOUDFLARE_API_TOKEN: "${CLOUDFLARE_API_TOKEN:-}"
+    ports:
+      - "127.0.0.1:${DEV_PORT:-4321}:4321"
+      - "127.0.0.1:8976:8976"
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+      - tooling-home:/home/tooling
+      - tooling-config:/config
+      - tooling-node-modules:/workspace/node_modules
+      - tooling-dist:/workspace/dist
+      - tooling-astro:/workspace/.astro
+
   site:
     build:
       context: .
@@ -27,3 +54,9 @@ services:
     security_opt:
       - no-new-privileges:true
 
+volumes:
+  tooling-home:
+  tooling-config:
+  tooling-node-modules:
+  tooling-dist:
+  tooling-astro:

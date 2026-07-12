@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "node scripts/prepare-dev.mjs && astro dev --host 0.0.0.0",
     "build": "node scripts/prepare-build.mjs && astro check && astro build && node scripts/generate-taxonomy-feeds.mjs",
+    "build:production": "node scripts/build-production.mjs",
     "preview": "astro preview",
     "content:import": "node scripts/import-ghost.mjs",
     "content:verify": "node scripts/verify-content.mjs",
