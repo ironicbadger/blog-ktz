@@ -4,7 +4,10 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import icon from 'astro-icon';
+import { fileURLToPath } from 'node:url';
 import remarkAssetUrls from './src/plugins/remark-asset-urls.mjs';
+
+const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,6 +39,13 @@ export default defineConfig({
 				js: 'javascript',
 				sh: 'bash',
 				yml: 'yaml',
+			},
+		},
+	},
+	vite: {
+		server: {
+			fs: {
+				allow: [projectRoot, '/node_modules'],
 			},
 		},
 	},

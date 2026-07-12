@@ -31,11 +31,11 @@ new-tagged title tags:
 
 # Optimize an image and print Markdown. The source may be anywhere on the host.
 image slug source:
-    source_path="$(realpath "{{ source }}")"; {{ dc }} run --rm --build -v "$source_path:/media/source:ro" tools npm run post:image -- "{{ slug }}" /media/source
+    source_path="$(realpath "{{ source }}")"; source_name="$(basename "$source_path")"; {{ dc }} run --rm --build -v "$source_path:/media/$source_name:ro" tools npm run post:image -- "{{ slug }}" "/media/$source_name"
 
 # Optimize an image and use it as the post's feature image.
 feature slug source:
-    source_path="$(realpath "{{ source }}")"; {{ dc }} run --rm --build -v "$source_path:/media/source:ro" tools npm run post:image -- "{{ slug }}" /media/source --feature
+    source_path="$(realpath "{{ source }}")"; source_name="$(basename "$source_path")"; {{ dc }} run --rm --build -v "$source_path:/media/$source_name:ro" tools npm run post:image -- "{{ slug }}" "/media/$source_name" --feature
 
 # Validate, upload changed assets to R2, and make a production build.
 publish:
