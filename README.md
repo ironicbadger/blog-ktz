@@ -1,9 +1,6 @@
 # ktz.blog
 
-Astro replacement for `blog.ktz.me`. Markdown lives in Git, assets live in R2, and `main` deploys to Cloudflare Pages.
-
-- Preview: https://blog-ktz.pages.dev
-- Leave https://blog.ktz.me untouched for now
+The code that powers https://blog.ktz.me.
 
 ## Setup
 
