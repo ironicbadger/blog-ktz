@@ -2,8 +2,8 @@
   "version": 1,
   "source": "assets-local/content",
   "prefix": "content/",
-  "assetCount": 5776,
-  "totalBytes": 3959412635,
+  "assetCount": 5782,
+  "totalBytes": 3959549029,
   "files": [
     {
       "key": "content/images/2015/08/6877439-Belgrade_Republic_of_Serbia.jpg",
@@ -21998,6 +21998,22 @@
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
+      "key": "content/images/2026/07/nvidia-shield-adb-projectivy-performance-refresh/developer-options.webp",
+      "size": 23574,
+      "sha256": "111b3c4ba4ca64bda4ebc46d5df2ad035f331b7dedf78f12b480137b9226d826",
+      "etag": "14ca5cf04f3c551786f41d56a334d3e4",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/2026/07/nvidia-shield-adb-projectivy-performance-refresh/nvidia-shield-youtube-thumbnail.webp",
+      "size": 48644,
+      "sha256": "70e671fb96e8571d9727aaff6ebeda4a68ad012cdd14466dbf4def61a2914831",
+      "etag": "85fa34072c99ff9e242b905ab20f5ead",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
       "key": "content/images/icon/pinned-octocat-093da3e6fa40-1.svg",
       "size": 1009,
       "sha256": "e2c39927d004078983910c9017066f4257a1d80a7e2456753d1285938dd858e7",
@@ -28467,6 +28483,22 @@
       "sha256": "d575da186842fa1312d68ccb77748bc50e3f137abca2616c28f6741a9e89b53a",
       "etag": "72c0d632998a613ab6f5e7e7d49f7b0a",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1000/2026/07/nvidia-shield-adb-projectivy-performance-refresh/developer-options.webp",
+      "size": 15784,
+      "sha256": "5d3a274eff93ce82761cfcfc05fea9d73461d27f647fa76a929ce34e246e1a7d",
+      "etag": "6110053af2f651eba813ceba4fc6e29f",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1000/2026/07/nvidia-shield-adb-projectivy-performance-refresh/nvidia-shield-youtube-thumbnail.webp",
+      "size": 25870,
+      "sha256": "a41a769d67d40bbd360b730635794d95a722334b9b096a6aa9aea21fbb7b354c",
+      "etag": "03e600229b83f06f1efda0f63ca25754",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
@@ -46155,6 +46187,22 @@
       "sha256": "3273033f14e56d3ed3dc2a67abeed73d27cb32ebc2b234246cff9de6b9cfa707",
       "etag": "9d89e351f18e7697403ceff0d66c7f12",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/07/nvidia-shield-adb-projectivy-performance-refresh/developer-options.webp",
+      "size": 8506,
+      "sha256": "a755046ff329f4df5d229bd09f355934a02021fbce1c58bb84082887eb1c2996",
+      "etag": "72466264455e8264d2299c3a73b1fc68",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/07/nvidia-shield-adb-projectivy-performance-refresh/nvidia-shield-youtube-thumbnail.webp",
+      "size": 14016,
+      "sha256": "87276eb414e39cef446b8261314502b510490e9043a35f706467dac272c6016d",
+      "etag": "6708917036aae17e89b03ceb0fa19817",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {

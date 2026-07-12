@@ -10,17 +10,23 @@ Astro replacement for `blog.ktz.me`. Markdown lives in Git, assets live in R2, a
 The host needs only Docker and `just`.
 
 ```sh
-just setup
+just admin setup
 ```
 
-If Cloudflare authentication is needed, run `just login` and open the URL it prints.
+If Wrangler is already authenticated on the host, import that login into the
+persistent Docker config. Otherwise, start a new browser login:
+
+```sh
+just admin login --import-local
+just admin login
+```
 
 ## Run
 
 ```sh
-just dev       # Astro at localhost:4321
-just site      # production-style nginx at localhost:8080
-just check     # verify content, assets, and production build
+just admin dev    # Astro at localhost:4321
+just admin site   # production-style nginx at localhost:8080
+just admin check  # verify content, assets, and production build
 ```
 
 ## Write and publish
@@ -29,14 +35,11 @@ just check     # verify content, assets, and production build
 just new-tagged "My post title" "technical,hardware"
 just feature my-post-title ~/Pictures/hero.jpg
 just image my-post-title ~/Pictures/detail.jpg
-just dev
-just publish
-
-git add .
-git commit -m "Publish my post"
-git push
+just admin dev
+just publish stage
+just publish release
 ```
 
-`just feature` and `just image` print Markdown ready to paste. `just publish` validates everything, uploads changed assets to R2, and builds the site. GitHub Actions deploys the push.
+`stage` asks before checking the site, uploading assets to R2, and committing locally. `release` asks again before pushing that commit and starting the deployment.
 
-Run `just` to list all recipes. Deployment settings are in `deployment.config.json`; custom domains and DNS remain deferred.
+Run `just` for the top-level recipes. Bare `just admin` and `just publish` list their available actions without doing anything. Deployment settings are in `deployment.config.json`; custom domains and DNS remain deferred.

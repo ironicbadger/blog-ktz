@@ -73,4 +73,4 @@ if (feature) {
 	console.log(`Set ${created[0]} as the feature image for ${slug}.`);
 }
 
-console.log('Run just publish when the post is ready.');
+console.log('Run just publish stage when the post is ready.');

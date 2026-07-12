@@ -15,7 +15,7 @@
     "content:verify": "node scripts/verify-content.mjs",
     "post:new": "node scripts/new-post.mjs",
     "post:image": "node scripts/add-post-images.mjs",
-    "post:publish": "node scripts/publish-post.mjs",
+    "post:stage": "node scripts/stage-post.mjs",
     "assets:manifest": "node scripts/prepare-r2-assets.mjs",
     "assets:responsive": "node scripts/generate-responsive-images.mjs",
     "assets:verify": "node scripts/verify-assets.mjs",
