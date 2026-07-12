@@ -2,13 +2,13 @@
 
 import { createHash } from 'node:crypto';
 import { createReadStream } from 'node:fs';
-import { mkdir, open, readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { mkdir, open, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import process from 'node:process';
 
 const DEFAULT_SOURCE = 'assets-local/content';
-const DEFAULT_OUTPUT = '.r2/assets-manifest.json';
+const DEFAULT_OUTPUT = 'data/assets-manifest.json';
 const DEFAULT_PREFIX = 'content/';
 const DEFAULT_CONCURRENCY = 3;
 const CACHE_CONTROL = 'public,max-age=2592000,stale-while-revalidate=86400';
@@ -51,7 +51,8 @@ Options:
   --output <file>       Manifest destination (default: ${DEFAULT_OUTPUT})
   --prefix <prefix>     R2 object-key prefix (default: ${DEFAULT_PREFIX})
   --upload              Run a non-deleting, checksum-aware R2 sync
-  --dry-run             Show which R2 objects would be uploaded (requires --upload)
+  --pull                Restore the local asset tree from the manifest and public R2 origin
+  --dry-run             Show upload or restore work without changing anything
   --concurrency <count> Parallel R2 uploads (default: ${DEFAULT_CONCURRENCY})
   --help                Show this help
 
@@ -76,6 +77,7 @@ function parseArgs(args) {
 		output: DEFAULT_OUTPUT,
 		prefix: DEFAULT_PREFIX,
 		upload: false,
+		pull: false,
 		dryRun: false,
 		concurrency: DEFAULT_CONCURRENCY,
 	};
@@ -98,6 +100,9 @@ function parseArgs(args) {
 			case '--upload':
 				options.upload = true;
 				break;
+			case '--pull':
+				options.pull = true;
+				break;
 			case '--dry-run':
 				options.dryRun = true;
 				break;
@@ -113,8 +118,11 @@ function parseArgs(args) {
 		}
 	}
 
-	if (options.dryRun && !options.upload) {
-		throw new Error('--dry-run must be used with --upload');
+	if (options.upload && options.pull) {
+		throw new Error('--upload and --pull cannot be used together');
+	}
+	if (options.dryRun && !options.upload && !options.pull) {
+		throw new Error('--dry-run must be used with --upload or --pull');
 	}
 	if (!Number.isInteger(options.concurrency) || options.concurrency < 1 || options.concurrency > 32) {
 		throw new Error('--concurrency must be an integer between 1 and 32');
@@ -226,7 +234,6 @@ async function makeManifest(source, prefix) {
 
 	return {
 		version: 1,
-		generatedAt: new Date().toISOString(),
 		source: toPosix(path.relative(process.cwd(), absoluteSource)) || '.',
 		prefix,
 		assetCount: files.length,
@@ -359,6 +366,76 @@ async function upload(options, prefix, manifest, deployment) {
 	await Promise.all(Array.from({ length: Math.min(options.concurrency, pending.length) }, () => worker()));
 }
 
+async function publicRequest(url, attempts = 12) {
+	let lastError;
+	for (let attempt = 1; attempt <= attempts; attempt += 1) {
+		try {
+			const response = await fetch(url);
+			if (response.ok) return response;
+			lastError = new Error(`Asset origin ${response.status}: ${await response.text()}`);
+			if (response.status !== 429 && response.status < 500) break;
+		} catch (error) {
+			lastError = error;
+		}
+		if (attempt < attempts) {
+			await new Promise((resolve) => setTimeout(resolve, Math.min(1000 * (2 ** (attempt - 1)), 60000)));
+		}
+	}
+	throw lastError;
+}
+
+async function pull(options, manifest, deployment) {
+	const assetBaseUrl = deployment.assetBaseUrl?.replace(/\/$/, '');
+	if (!assetBaseUrl) throw new Error('--pull requires assetBaseUrl in deployment.config.json');
+	const source = path.resolve(options.source);
+	const prefix = normalizePrefix(manifest.prefix || options.prefix);
+	const pending = [];
+
+	for (const [index, file] of manifest.files.entries()) {
+		const relativeKey = file.key.slice(prefix.length);
+		const target = path.join(source, relativeKey);
+		const existing = await stat(target).catch((error) => {
+			if (error?.code === 'ENOENT') return null;
+			throw error;
+		});
+		if (!existing || existing.size !== file.size || (await hashes(target)).sha256 !== file.sha256) {
+			pending.push({ file, target });
+		}
+		if ((index + 1) % 100 === 0) process.stdout.write(`Checked ${index + 1}/${manifest.files.length} assets\r`);
+	}
+	if (manifest.files.length >= 100) process.stdout.write(' '.repeat(48) + '\r');
+	console.log(`${pending.length} of ${manifest.files.length} assets need restoring from ${assetBaseUrl}`);
+	if (options.dryRun || pending.length === 0) return;
+
+	let next = 0;
+	let completed = 0;
+	async function worker() {
+		while (next < pending.length) {
+			const { file, target } = pending[next];
+			next += 1;
+			const response = await publicRequest(`${assetBaseUrl}/${encodeObjectKey(file.key)}`);
+			const body = Buffer.from(await response.arrayBuffer());
+			const digest = createHash('sha256').update(body).digest('hex');
+			if (body.length !== file.size || digest !== file.sha256) {
+				throw new Error(`Checksum mismatch while restoring ${file.key}`);
+			}
+			await mkdir(path.dirname(target), { recursive: true });
+			const temporary = `${target}.part-${process.pid}`;
+			try {
+				await writeFile(temporary, body);
+				await rename(temporary, target);
+			} finally {
+				await rm(temporary, { force: true });
+			}
+			completed += 1;
+			if (completed % 25 === 0 || completed === pending.length) {
+				console.log(`Restored ${completed}/${pending.length} assets`);
+			}
+		}
+	}
+	await Promise.all(Array.from({ length: Math.min(options.concurrency, pending.length) }, () => worker()));
+}
+
 async function main() {
 	const options = parseArgs(process.argv.slice(2));
 	if (options.help) {
@@ -368,8 +445,13 @@ async function main() {
 
 	const prefix = normalizePrefix(options.prefix);
 	const deployment = JSON.parse(await readFile(path.join(process.cwd(), 'deployment.config.json'), 'utf8'));
-	const manifest = await makeManifest(options.source, prefix);
 	const output = path.resolve(options.output);
+	if (options.pull) {
+		const manifest = JSON.parse(await readFile(output, 'utf8'));
+		await pull(options, manifest, deployment);
+		return;
+	}
+	const manifest = await makeManifest(options.source, prefix);
 	await mkdir(path.dirname(output), { recursive: true });
 	await writeFile(output, `${JSON.stringify(manifest, null, 2)}\n`);
 

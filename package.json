@@ -18,7 +18,9 @@
     "assets:manifest": "node scripts/prepare-r2-assets.mjs",
     "assets:responsive": "node scripts/generate-responsive-images.mjs",
     "assets:verify": "node scripts/verify-assets.mjs",
+    "assets:registry:verify": "node scripts/verify-asset-manifest.mjs",
     "assets:upload": "node scripts/prepare-r2-assets.mjs --upload",
+    "assets:pull": "node scripts/prepare-r2-assets.mjs --pull",
     "deploy:pages": "node scripts/deploy-pages.mjs",
     "astro": "astro"
   },

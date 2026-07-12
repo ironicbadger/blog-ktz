@@ -83,7 +83,7 @@ Leave `PUBLIC_ASSET_BASE_URL` empty for local `/content/` assets.
 
 ## Writing and publishing a post
 
-Git stores the durable, reviewable parts of a post: Markdown, frontmatter, and the generated responsive-image index. Binary media stays in the ignored `assets-local/` tree and is uploaded directly to R2. A post can therefore be previewed locally with ordinary `/content/...` URLs while the production build rewrites the same URLs to the configured R2 origin.
+Git stores the durable, reviewable parts of a post: Markdown, frontmatter, the generated responsive-image index, and `data/assets-manifest.json`, a checksum registry of every R2 object. Binary media stays in the ignored `assets-local/` tree and is uploaded directly to R2. A post can therefore be previewed locally with ordinary `/content/...` URLs while the production build rewrites the same URLs to the configured R2 origin.
 
 Create a Markdown draft:
 
@@ -110,7 +110,14 @@ npm run post:publish
 
 That command regenerates `src/data/responsive-images.json`, verifies content and local media references, uploads only new or changed assets to R2, and performs a production build against the R2 origin. It does not commit or push for you: review the resulting Markdown/index diff, then commit and push it. CI rebuilds and publishes Pages from `main`.
 
-On a new workstation, restore `assets-local/content` from the Ghost mirror or R2 before editing older media. New posts do not need the entire historic mirror if their own local files are present, but the full `assets:verify` and `post:publish` checks intentionally require all referenced assets.
+On a new workstation, reconstruct the checksum-verified local mirror directly from R2:
+
+```sh
+npm run assets:pull -- --dry-run
+npm run assets:pull
+```
+
+New posts do not need the entire historic mirror if their own local files are present, but the full `assets:verify` and `post:publish` checks intentionally require all referenced assets.
 
 ## Honeymoon image rebuild
 
@@ -194,7 +201,7 @@ npm run assets:verify
 npm run assets:manifest
 ```
 
-The ignored `.r2/assets-manifest.json` records each future `content/` object key, size, MIME type, cache policy, and digest. Manifest generation does not contact Cloudflare.
+The committed `data/assets-manifest.json` records each `content/` object key, size, MIME type, cache policy, and digest. Manifest generation does not contact Cloudflare. CI checks that every local asset URL referenced by content exists in this registry.
 
 The uploader uses Cloudflare's object API with the current Wrangler login or `CLOUDFLARE_API_TOKEN`. It compares size, checksum, MIME type, and cache metadata, applies a 30-day cache policy, resumes safely after interruption, and never deletes remote objects. Dry-run before a manual bulk change:
 
