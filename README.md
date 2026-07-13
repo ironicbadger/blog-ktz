@@ -30,12 +30,16 @@ just admin check  # verify content, assets, and production build
 
 ```sh
 just new-tagged "My post title" "technical,hardware"
-just feature my-post-title ~/Pictures/hero.jpg
-just image my-post-title ~/Pictures/detail.jpg
+just image featured my-post-title ~/Pictures/hero.jpg
+just image inline my-post-title ~/Pictures/detail.jpg
 just admin dev
 just publish stage
 just publish release
 ```
+
+New posts start with `drafts: true`. Drafts appear during local development but
+are omitted from production pages, archives, search indexes, and feeds. Change
+the field to `false` when the post is ready to publish.
 
 `stage` asks before checking the site, uploading assets to R2, and committing locally. `release` asks again before pushing that commit and starting the deployment.
 

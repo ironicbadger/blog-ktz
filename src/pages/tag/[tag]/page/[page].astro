@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import ArchiveHeader from '../../../../components/ArchiveHeader.astro';
 import PostFeed from '../../../../components/PostFeed.astro';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { pageCount, pageSlice, postsWithTag, publicTags, sortPosts } from '../../../../lib/content';
+import { pageCount, pageSlice, postsWithTag, publicTags, sitePosts } from '../../../../lib/content';
 
 export async function getStaticPaths() {
-	const posts = sortPosts(await getCollection('posts'));
+	const posts = sitePosts(await getCollection('posts'));
 	return publicTags().flatMap((tag) => {
 		const tagged = postsWithTag(posts, tag.slug);
 		const pages = pageCount(tagged);

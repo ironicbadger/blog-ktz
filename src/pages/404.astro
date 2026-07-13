@@ -2,9 +2,9 @@
 import { getCollection } from 'astro:content';
 import PostCard from '../components/PostCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { sortPosts } from '../lib/content';
+import { sitePosts } from '../lib/content';
 
-const posts = sortPosts(await getCollection('posts')).slice(0, 3);
+const posts = sitePosts(await getCollection('posts')).slice(0, 3);
 ---
 
 <BaseLayout title="Page not found" bodyClass="error-template">

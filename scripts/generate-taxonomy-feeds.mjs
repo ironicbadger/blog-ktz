@@ -125,11 +125,12 @@ const filenames = (await readdir(contentDirectory)).filter((name) => /\.mdx?$/.t
 const posts = await Promise.all(
 	filenames.map(async (filename) => parsePost(await readFile(path.join(contentDirectory, filename), 'utf8'), filename)),
 );
-posts.sort((a, b) => new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf());
+const publishedPosts = posts.filter((post) => !post.drafts);
+publishedPosts.sort((a, b) => new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf());
 
 const tags = new Map();
 const authors = new Map();
-for (const post of posts) {
+for (const post of publishedPosts) {
 	for (const tag of post.tags || []) {
 		if (!tags.has(tag)) tags.set(tag, []);
 		tags.get(tag).push(post);

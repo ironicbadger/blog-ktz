@@ -60,6 +60,7 @@ internalTags: []
 primaryTag: ${primaryTag}
 featured: false
 readingTime: 0
+drafts: true
 ---
 
 Write here.

@@ -21,13 +21,9 @@ new title:
 new-tagged title tags:
     {{ run }} npm run post:new -- "{{ title }}" --tags="{{ tags }}"
 
-# Optimize an image and print Markdown. The source may be anywhere on the host.
-image slug source:
-    source_path="$(realpath "{{ source }}")"; source_name="$(basename "$source_path")"; {{ dc }} run --rm --build -v "$source_path:/media/$source_name:ro" tools npm run post:image -- "{{ slug }}" "/media/$source_name"
-
-# Optimize an image and use it as the post's feature image.
-feature slug source:
-    source_path="$(realpath "{{ source }}")"; source_name="$(basename "$source_path")"; {{ dc }} run --rm --build -v "$source_path:/media/$source_name:ro" tools npm run post:image -- "{{ slug }}" "/media/$source_name" --feature
+# Optimize a featured or inline post image. The source may be anywhere on the host.
+image kind slug source:
+    case "{{ kind }}" in featured) image_args=(--feature) ;; inline) image_args=() ;; *) echo 'Image kind must be "featured" or "inline".' >&2; exit 2 ;; esac; source_path="$(realpath "{{ source }}")"; source_name="$(basename "$source_path")"; {{ dc }} run --rm --build -v "$source_path:/media/$source_name:ro" tools npm run post:image -- "{{ slug }}" "/media/$source_name" "${image_args[@]}"
 
 # Stage or release a publication, with explicit confirmation before changes.
 publish action="":

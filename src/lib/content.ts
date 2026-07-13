@@ -9,6 +9,11 @@ export function sortPosts(posts: Post[]) {
 	return [...posts].sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 }
 
+export function sitePosts(posts: Post[]) {
+	const visible = import.meta.env.PROD ? posts.filter((post) => !post.data.drafts) : posts;
+	return sortPosts(visible);
+}
+
 export function postsWithTag(posts: Post[], tag: string) {
 	return posts.filter((post) => post.data.tags.includes(tag));
 }

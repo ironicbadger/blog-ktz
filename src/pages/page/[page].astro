@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import HomeHero from '../../components/HomeHero.astro';
 import PostFeed from '../../components/PostFeed.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { pageCount, pageSlice, sortPosts } from '../../lib/content';
+import { pageCount, pageSlice, sitePosts } from '../../lib/content';
 
 export async function getStaticPaths() {
-	const posts = sortPosts(await getCollection('posts'));
+	const posts = sitePosts(await getCollection('posts'));
 	const pages = pageCount(posts);
 	return Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
 		const page = index + 2;

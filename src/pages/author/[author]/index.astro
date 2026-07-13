@@ -4,11 +4,11 @@ import authors from '../../../data/authors.json';
 import ArchiveHeader from '../../../components/ArchiveHeader.astro';
 import PostFeed from '../../../components/PostFeed.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { pageCount, pageSlice, postsByAuthor, sortPosts } from '../../../lib/content';
+import { pageCount, pageSlice, postsByAuthor, sitePosts } from '../../../lib/content';
 import { canonicalUrl } from '../../../lib/site';
 
 export async function getStaticPaths() {
-	const posts = sortPosts(await getCollection('posts'));
+	const posts = sitePosts(await getCollection('posts'));
 	return authors.map((author) => {
 		const authored = postsByAuthor(posts, author.slug);
 		return { params: { author: author.slug }, props: { author, posts: authored, pages: pageCount(authored) } };

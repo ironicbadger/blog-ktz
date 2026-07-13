@@ -2,11 +2,11 @@
 import { getCollection } from 'astro:content';
 import ArchiveHeader from '../../components/ArchiveHeader.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { sortPosts, tagDetails } from '../../lib/content';
+import { sitePosts, tagDetails } from '../../lib/content';
 import { formatDate } from '../../lib/format';
 import { canonicalUrl, SITE } from '../../lib/site';
 
-const posts = sortPosts(await getCollection('posts'));
+const posts = sitePosts(await getCollection('posts'));
 const description = `A chronological list of all ${posts.length} posts.`;
 const structuredData = {
 	'@context': 'https://schema.org',

@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
-import { sortPosts, tagDetails } from '../lib/content';
+import { sitePosts, tagDetails } from '../lib/content';
 
 function plainText(source = '') {
 	return source
@@ -15,7 +15,7 @@ function plainText(source = '') {
 }
 
 export const GET: APIRoute = async () => {
-	const posts = sortPosts(await getCollection('posts'));
+	const posts = sitePosts(await getCollection('posts'));
 	return new Response(
 		JSON.stringify(
 			posts.map((post) => ({

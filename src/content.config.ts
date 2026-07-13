@@ -41,6 +41,7 @@ const posts = defineCollection({
 		primaryTag: z.string().nullable().optional(),
 		featured: z.boolean().default(false),
 		readingTime: z.number().int().nonnegative().default(0),
+		drafts: z.boolean().default(false),
 	}),
 });
 

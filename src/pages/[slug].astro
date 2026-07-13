@@ -3,7 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ArticleMeta from '../components/ArticleMeta.astro';
 import ReadNext from '../components/ReadNext.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { sortPosts, tagDetails, type ContentPage, type Post } from '../lib/content';
+import { sitePosts, tagDetails, type ContentPage, type Post } from '../lib/content';
 import { canonicalUrl, responsiveImage, SITE } from '../lib/site';
 
 type EntryProps =
@@ -11,7 +11,7 @@ type EntryProps =
 	| { kind: 'page'; entry: ContentPage; allPosts: Post[] };
 
 export async function getStaticPaths() {
-	const posts = sortPosts(await getCollection('posts'));
+	const posts = sitePosts(await getCollection('posts'));
 	const pages = await getCollection('pages');
 	return [
 		...posts.map((entry) => ({ params: { slug: entry.data.slug }, props: { kind: 'post', entry, allPosts: posts } })),

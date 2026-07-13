@@ -1,11 +1,11 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { sortPosts } from '../lib/content';
+import { sitePosts } from '../lib/content';
 import { feedChannelData, feedContent, feedItemData, feedNamespaces } from '../lib/feed';
 import { SITE } from '../lib/site';
 
 export async function GET(context: { site: URL | undefined }) {
-	const posts = sortPosts(await getCollection('posts')).slice(0, 15);
+	const posts = sitePosts(await getCollection('posts')).slice(0, 15);
 	return rss({
 		title: SITE.title,
 		description: SITE.description,
