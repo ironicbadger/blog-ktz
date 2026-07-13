@@ -69,7 +69,7 @@ I don't have a precise availability figure for the whole period, but I would wag
 
 A couple of months ago, my fully patched Ghost instance got popped by two different CVEs in two weeks, and it was at that moment I knew I had to drop the CMS.
 
-This wasn't a rage-quit from Ghost, though that project certainly has undergone some massive changes in that time period. The risk is that a fully patched CMS still leaves an internet-facing application and database running at all times. Static output removes most of that runtime attack surface and makes sense for a site where only one person publishes.
+This wasn't a rage-quit from Ghost, though that project certainly has undergone some massive changes in that time period. It was more just that finally the accumlated risk of even a fully patched CMS, still leaves an internet-facing application and database running at all times.
 
 ## Moving eleven years of history
 
