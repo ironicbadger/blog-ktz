@@ -20,15 +20,15 @@ async function walk(directory) {
 function referencedAssets(source) {
 	const paths = new Set();
 	for (const match of source.matchAll(/(?<![A-Za-z0-9._~-])\/content\/[A-Za-z0-9_~!$&'()*+,;=:@%./-]+/g)) {
-		const normalized = match[0]
+		let normalized = match[0]
 			.replaceAll('&amp;', '&')
 			.split(/[?#]/, 1)[0]
 			.replace(/[),.;]+$/, '');
 		try {
-			paths.add(decodeURIComponent(normalized));
-		} catch {
-			paths.add(normalized);
-		}
+			normalized = decodeURIComponent(normalized);
+		} catch { /* Retain the encoded path. */ }
+		// Documentation may mention a content directory without referencing a file.
+		if (!normalized.endsWith('/')) paths.add(normalized);
 	}
 	return paths;
 }

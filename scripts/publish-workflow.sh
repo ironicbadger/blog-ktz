@@ -83,7 +83,7 @@ stage_publication() {
 	echo 'Local commit contents:'
 	git diff --cached --stat
 
-	git commit -m "${BLOG_COMMIT_MESSAGE:-$(default_commit_message)}"
+	BLOG_PUBLISH_STAGED=1 git commit -m "${BLOG_COMMIT_MESSAGE:-$(default_commit_message)}"
 
 	echo
 	echo 'Staging complete. Nothing was pushed.'

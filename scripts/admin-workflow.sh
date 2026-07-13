@@ -8,6 +8,7 @@ usage() {
 	cat <<'EOF'
 Available admin actions:
   just admin setup  Build the tooling image and restore assets from R2
+  just admin hooks  Install this repository's Git safety hooks
   just admin dev    Run Astro at http://localhost:4321
   just admin site   Run the production-style site at http://localhost:8080
   just admin check  Validate content, assets, and the production build
@@ -16,6 +17,11 @@ Available admin actions:
   just admin login --import-local  Reuse this host's existing Wrangler login
   just admin shell  Open a shell in the tooling container
 EOF
+}
+
+install_git_hooks() {
+	git config --local core.hooksPath .githooks
+	echo 'Installed repository Git hooks from .githooks.'
 }
 
 dc() {
@@ -63,8 +69,12 @@ import_local_wrangler_login() {
 
 case "${1:-}" in
 	setup)
+		install_git_hooks
 		dc --profile tools build tools
 		tools npm run assets:pull
+		;;
+	hooks)
+		install_git_hooks
 		;;
 	dev)
 		dc run --rm --build --service-ports tools npm run dev

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+publishing_paths=(
+	'src/content'
+	'data/assets-manifest.json'
+	'src/data/responsive-images.json'
+)
+
+if git diff --cached --quiet -- "${publishing_paths[@]}"; then
+	exit 0
+fi
+
+if [[ "${BLOG_PUBLISH_STAGED:-}" != '1' ]]; then
+	cat >&2 <<'EOF'
+Commit blocked: staged publishing files must go through `just publish stage`.
+
+That workflow validates the content and production build, uploads local images
+to R2, updates the asset registries, and then creates the commit safely.
+EOF
+	exit 1
+fi
+
+git diff --cached --check
+node scripts/verify-asset-manifest.mjs

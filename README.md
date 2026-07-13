@@ -10,6 +10,13 @@ The host needs only Docker and `just`.
 just admin setup
 ```
 
+Setup installs the repository's Git safety hooks. Existing checkouts can install
+or refresh them without repeating the asset setup:
+
+```sh
+just admin hooks
+```
+
 If Wrangler is already authenticated on the host, import that login into the
 persistent Docker config. Otherwise, start a new browser login:
 
@@ -42,5 +49,9 @@ are omitted from production pages, archives, search indexes, and feeds. Change
 the field to `false` when the post is ready to publish.
 
 `stage` asks before checking the site, uploading assets to R2, and committing locally. `release` asks again before pushing that commit and starting the deployment.
+
+The pre-commit hook rejects ordinary commits that include content or generated
+asset registries. This keeps those changes on the validated `just publish stage`
+path; CI remains the remote backstop.
 
 Run `just` for the top-level recipes. Bare `just admin` and `just publish` list their available actions without doing anything. Deployment settings are in `deployment.config.json`; custom domains and DNS remain deferred.

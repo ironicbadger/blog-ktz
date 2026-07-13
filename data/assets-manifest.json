@@ -2,8 +2,8 @@
   "version": 1,
   "source": "assets-local/content",
   "prefix": "content/",
-  "assetCount": 5782,
-  "totalBytes": 3959549029,
+  "assetCount": 5790,
+  "totalBytes": 3962425485,
   "files": [
     {
       "key": "content/images/2015/08/6877439-Belgrade_Republic_of_Serbia.jpg",
@@ -21998,6 +21998,22 @@
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
+      "key": "content/images/2026/07/ghost-to-astro/140a6530.webp",
+      "size": 1346852,
+      "sha256": "11b822e6755a3570a88fe34b073075f9ab9f3d09c4989690e243f30286f983ff",
+      "etag": "95b5b942fba86b7e056d632c05d39062",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/2026/07/ghost-to-astro/309b6bf448e2c3ca.webp",
+      "size": 416646,
+      "sha256": "6b755a06a6766edf9d7fd22724f6cd7471411c8349195c710a213a91e62dfa5a",
+      "etag": "4b399106976bc92f3f6e4ac664517974",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
       "key": "content/images/2026/07/nvidia-shield-adb-projectivy-performance-refresh/developer-options.webp",
       "size": 23574,
       "sha256": "111b3c4ba4ca64bda4ebc46d5df2ad035f331b7dedf78f12b480137b9226d826",
@@ -28486,6 +28502,22 @@
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
+      "key": "content/images/size/w1000/2026/07/ghost-to-astro/140a6530.webp",
+      "size": 187002,
+      "sha256": "430da9b760a5a5491106566ff3e54c1048eecf7e53789ffec43dbefba76530a5",
+      "etag": "464af6c350aa1b39d0f288a760141db9",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1000/2026/07/ghost-to-astro/309b6bf448e2c3ca.webp",
+      "size": 109548,
+      "sha256": "0e7dfc483e0823e9fabb893b479dfc59ed99e3d4c9faefb521c1a1dedad721cc",
+      "etag": "fdee490dfe6df3b3f611222132b04b68",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
       "key": "content/images/size/w1000/2026/07/nvidia-shield-adb-projectivy-performance-refresh/developer-options.webp",
       "size": 15784,
       "sha256": "5d3a274eff93ce82761cfcfc05fea9d73461d27f647fa76a929ce34e246e1a7d",
@@ -32779,6 +32811,22 @@
       "sha256": "98a9e1b2bbf2cfec3d2ed183e26d90885defafd7c08b9f396a6df7c2d57a1a9a",
       "etag": "f8fd44df8af26031ebb1bc1644b7eec6",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1600/2026/07/ghost-to-astro/140a6530.webp",
+      "size": 486434,
+      "sha256": "19a39da8aba8b728fc9ce0c04a4dfaab9cee223ca4f7a817fa94192c6c29ce99",
+      "etag": "21ef8f7f31d87dbed878552941df4c7c",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1600/2026/07/ghost-to-astro/309b6bf448e2c3ca.webp",
+      "size": 214982,
+      "sha256": "bfa6dbab8dfafd5a1d1852d07f17ead4cea17b8c21420bb725b0ffb07972e971",
+      "etag": "0792b937a492315ff172921c46ae98cc",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
@@ -46187,6 +46235,22 @@
       "sha256": "3273033f14e56d3ed3dc2a67abeed73d27cb32ebc2b234246cff9de6b9cfa707",
       "etag": "9d89e351f18e7697403ceff0d66c7f12",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/07/ghost-to-astro/140a6530.webp",
+      "size": 64870,
+      "sha256": "835c1b1a329b5da9d8590052247f61f79c84a97504ae156e092ffa4162b43a93",
+      "etag": "2cc09ad121f16246be818d480aab1fa5",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/07/ghost-to-astro/309b6bf448e2c3ca.webp",
+      "size": 50122,
+      "sha256": "197f15666bbd8f4a04f0e4ad82213cfb004674de51615885b9a6531abed0fe24",
+      "etag": "f621b14a2e4c848dcaebd42868c6e605",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {

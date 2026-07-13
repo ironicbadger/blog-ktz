@@ -28,6 +28,8 @@ for (const filename of sourceFiles) {
 	for (const match of source.matchAll(/(?<![A-Za-z0-9._~-])\/content\/[A-Za-z0-9_~!$&'()*+,;=:@%./-]+/g)) {
 		let asset = match[0].replaceAll('&amp;', '&').split(/[?#]/, 1)[0].replace(/[),.;]+$/, '');
 		try { asset = decodeURIComponent(asset); } catch { /* Retain the encoded path. */ }
+		// Documentation may mention a content directory without referencing a file.
+		if (asset.endsWith('/')) continue;
 		if (!registered.has(asset)) {
 			if (!missing.has(asset)) missing.set(asset, []);
 			missing.get(asset).push(path.relative(root, filename));
