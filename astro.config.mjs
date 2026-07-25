@@ -6,6 +6,7 @@ import { unified } from '@astrojs/markdown-remark';
 import icon from 'astro-icon';
 import { fileURLToPath } from 'node:url';
 import remarkAssetUrls from './src/plugins/remark-asset-urls.mjs';
+import remarkCards from './src/plugins/remark-cards.mjs';
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
@@ -24,7 +25,7 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-		processor: unified({ remarkPlugins: [remarkAssetUrls] }),
+		processor: unified({ remarkPlugins: [remarkCards, remarkAssetUrls] }),
 		shikiConfig: {
 			themes: {
 				light: 'github-light',
