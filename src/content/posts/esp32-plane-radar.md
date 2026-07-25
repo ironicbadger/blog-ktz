@@ -18,12 +18,14 @@ seo:
   description: null
   image: null
 ghostId: local-0759fd1f-2968-4fca-bc72-a5e6ea6ed662
-tags: []
+tags:
+  - technical
+  - esp32
 internalTags: []
-primaryTag: null
+primaryTag: technical
 featured: false
-readingTime: 0
-drafts: true
+readingTime: 3
+drafts: false
 ---
 
 This [project](https://github.com/ironicbadger/ESP32-Plane-Radar) made for a perfect lazy Saturday project after a busy week at Devrelcon in NYC. I just put together an esp32 based project I saw on Makerworld last week.

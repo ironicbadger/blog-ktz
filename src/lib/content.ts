@@ -3,6 +3,14 @@ import tags from '../data/tags.json';
 
 export type Post = CollectionEntry<'posts'>;
 export type ContentPage = CollectionEntry<'pages'>;
+export type ArchiveTag = {
+	name: string;
+	slug: string;
+	description: string | null;
+	feature_image: string | null;
+	meta_title: string | null;
+	meta_description: string | null;
+};
 export const POSTS_PER_PAGE = 25;
 
 export function sortPosts(posts: Post[]) {
@@ -33,6 +41,25 @@ export function pageSlice<T>(items: T[], page: number) {
 
 export function publicTags() {
 	return tags.filter((tag) => tag.visibility === 'public' && !tag.name.startsWith('#') && tag.count?.posts > 0);
+}
+
+export function archiveTags(posts: Post[]) {
+	const configured = publicTags();
+	const bySlug = new Map<string, ArchiveTag>(configured.map((tag) => [tag.slug, tag]));
+
+	for (const slug of new Set(posts.flatMap((post) => post.data.tags))) {
+		if (bySlug.has(slug)) continue;
+		bySlug.set(slug, {
+			name: slug,
+			slug,
+			description: null,
+			feature_image: null,
+			meta_title: null,
+			meta_description: null,
+		});
+	}
+
+	return [...bySlug.values()].filter((tag) => postsWithTag(posts, tag.slug).length > 0);
 }
 
 export function tagDetails(slug: string) {

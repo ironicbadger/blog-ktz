@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import rss from '@astrojs/rss';
 import * as cheerio from 'cheerio';
@@ -144,6 +144,7 @@ for (const post of publishedPosts) {
 await Promise.all([
 	...[...tags].map(async ([tag, taggedPosts]) => {
 		const target = path.join(distDirectory, 'tag', tag, 'rss.xml');
+		await mkdir(path.dirname(target), { recursive: true });
 		await writeFile(
 			target,
 			await feedXml(`${tag} - ktz.`, `Posts tagged ${tag}`, taggedPosts, `/tag/${tag}/rss/`),
@@ -151,6 +152,7 @@ await Promise.all([
 	}),
 	...[...authors.values()].map(async ({ author, posts: authoredPosts }) => {
 		const target = path.join(distDirectory, 'author', author.slug, 'rss.xml');
+		await mkdir(path.dirname(target), { recursive: true });
 		await writeFile(
 			target,
 			await feedXml(

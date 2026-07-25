@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 import ArchiveHeader from '../../../../components/ArchiveHeader.astro';
 import PostFeed from '../../../../components/PostFeed.astro';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import { pageCount, pageSlice, postsWithTag, publicTags, sitePosts } from '../../../../lib/content';
+import { archiveTags, pageCount, pageSlice, postsWithTag, sitePosts } from '../../../../lib/content';
 
 export async function getStaticPaths() {
 	const posts = sitePosts(await getCollection('posts'));
-	return publicTags().flatMap((tag) => {
+	return archiveTags(posts).flatMap((tag) => {
 		const tagged = postsWithTag(posts, tag.slug);
 		const pages = pageCount(tagged);
 		return Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
