@@ -1,7 +1,7 @@
 ---
 title: "An ESP32 based plane radar"
 slug: esp32-plane-radar
-description: ""
+description: "Plane radar is a neat little project that pulls nearby ADS-B traffic, plots each aircraft by distance and bearing, and shows the details directly on a cute little screen."
 customExcerpt: null
 publishedAt: 2026-07-25T18:41:10-04:00
 updatedAt: 2026-07-25T18:41:10-04:00
@@ -32,7 +32,7 @@ This [project](https://github.com/ironicbadger/ESP32-Plane-Radar) made for a per
 
 !!!card type=github url="https://github.com/ironicbadger/ESP32-Plane-Radar"
 
-Plane radar is a neat little project that turns an ESP32-C3 and a 1.28-inch round display into a live aircraft radar. It pulls nearby ADS-B traffic, plots each aircraft by distance and bearing, and shows the useful details directly on the screen.
+Plane radar is a neat little project that turns an ESP32-C3 and a 1.28-inch round display into a live aircraft radar. It pulls nearby ADS-B traffic, plots each aircraft by distance and bearing, and shows the details directly on the screen.
 
 The parts came in while I was away. It was an easy build, although it did require a little soldering. I always enjoy doing that as it reminds me of my days building racing drones.
 

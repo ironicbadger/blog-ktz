@@ -68,6 +68,8 @@ stage_publication() {
 		echo '  (none yet; the asset manifest may change during staging)'
 	fi
 
+	bash scripts/check-stage-posts.sh
+
 	confirm_exact 'stage' 'Staging will upload files to R2, run pre-flight checks for publishing, and commit (but not push) files to Git locally.'
 
 	docker_tools npm run post:stage
