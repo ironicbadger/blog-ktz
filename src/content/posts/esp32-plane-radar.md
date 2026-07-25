@@ -28,19 +28,21 @@ readingTime: 3
 drafts: false
 ---
 
-This [project](https://github.com/ironicbadger/ESP32-Plane-Radar) made for a perfect lazy Saturday project after a busy week at Devrelcon in NYC. I just put together an esp32 based project I saw on Makerworld last week.
+This [project](https://github.com/ironicbadger/ESP32-Plane-Radar) made for a perfect lazy Saturday unwind, after a busy week giving a talk at [Devrelcon in NYC](https://nyc.devrelcon.dev/sessions/113). Makerworld had this thing as one of their featured models about a week or two ago, and the parts came in while I was away.
 
 !!!card type=github url="https://github.com/ironicbadger/ESP32-Plane-Radar"
 
 Plane radar is a neat little project that turns an ESP32-C3 and a 1.28-inch round display into a live aircraft radar. It pulls nearby ADS-B traffic, plots each aircraft by distance and bearing, and shows the details directly on the screen.
 
-The parts came in while I was away. It was an easy build, although it did require a little soldering. I always enjoy doing that as it reminds me of my days building racing drones.
+It was an easy build, although it did require a little soldering. I always enjoy doing that as it reminds me of my days building racing drones. Thin, silicone based wires made quick work of the cabling. And after about 15 minutes, we were ready to go.
 
 ![An ESP32-C3 wired to a round display during assembly](/content/images/2026/07/esp32-plane-radar/img-3934.webp)
 
+It is insanely easy to flash firmwares to a fresh esp32 these days using the browser-based [ESPHome web flashing tool](https://web.esphome.io/). Under 30s and you're done.
+
 ## A quick note about the 3d model
 
-The original model was featured on Makerworld, because looks great.
+The original model was featured on Makerworld, because it looks great. Reality though was, in practice, it's not actually that great.
 
 !!!card type=makerworld url="https://makerworld.com/en/models/2872376-esp32-plane-radar-live-ads-b-on-a-round-display"
 
