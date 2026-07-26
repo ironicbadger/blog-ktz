@@ -62,4 +62,6 @@ The web interface can now modify coordinates after initial setup. Display option
 
 Finally, the firmware now supports authenticated OTA updates, so future builds can be installed through the browser instead of connecting the board over USB.
 
-I’ve compiled, flashed and tested everything on the actual device, and the latest work is committed to the main branch. Next up will probably be porting it to a larger  display and designing a tidy 3D-printed enclosure for it.
+This is like how ESPHome applies firmware updates wirelessly. Compile the binary on your local laptop and then upload it to the ESP32 wirelessly.
+
+Next up might be porting it to a larger display, and designing a more forgiving 3D printed enclosure for it.
