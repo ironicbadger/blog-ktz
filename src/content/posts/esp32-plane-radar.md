@@ -54,7 +54,7 @@ Unfortunately the tolerances are just too tight to be usable with the batch of b
 
 I’ve spent today improving my fork of ESP32 Plane Radar project, with the help of pure vibes.
 
-The biggest improvement is proper flight context. Where the data is available, aircraft now show their origin and destination instead of just their tail number, with the callsign used as a fallback. Aircraft types are also more descriptive—something like `B737-800` rather than simply `B737`. I added local weather, temperature, humidity, time and date as well.
+The biggest improvement is proper flight context. Where the data is available, aircraft now show their origin and destination instead of just their tail number, with the callsign used as a fallback. Aircraft types are also more descriptive, something like `B737-800` rather than simply `B737`. I added local weather, temperature, humidity, time and date as well.
 
 The web interface can now modify coordinates after initial setup. Display options can now be changed without resetting the Wi-Fi configuration, and there are controls for units, runways, weather, temperature format and 12/24-hour time. Text is 10% larger by default, with a persistent 80–130% slider for adjusting it.
 
