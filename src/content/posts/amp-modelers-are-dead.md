@@ -1,5 +1,5 @@
 ---
-title: "amp-modelers-are-dead"
+title: "Guitar Amp Modelers Are Dead."
 slug: amp-modelers-are-dead
 description: "Amp modellers are dead. I don't say that lightly or to be hyperbolic. It's just true. NAM-A2 is here and it is awesome."
 customExcerpt: null
