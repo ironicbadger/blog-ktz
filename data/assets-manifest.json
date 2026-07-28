@@ -2,8 +2,8 @@
   "version": 1,
   "source": "assets-local/content",
   "prefix": "content/",
-  "assetCount": 5802,
-  "totalBytes": 3967306635,
+  "assetCount": 5805,
+  "totalBytes": 3967400863,
   "files": [
     {
       "key": "content/images/2015/08/6877439-Belgrade_Republic_of_Serbia.jpg",
@@ -21998,6 +21998,14 @@
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
+      "key": "content/images/2026/07/amp-modelers-are-dead/gateway.webp",
+      "size": 47404,
+      "sha256": "9fd5f61f72065f5edebbb57d02983d54a0e776d6d24e7cb764d98836e8d36a48",
+      "etag": "304f085111059c85f262e147da52e4af",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
       "key": "content/images/2026/07/esp32-plane-radar/img-3934.webp",
       "size": 1358038,
       "sha256": "ec64a01a50205cdab7ae6db4869a5007d4974ac7fe8bb9d3b482d6a9f3d95a18",
@@ -28523,6 +28531,14 @@
       "sha256": "d575da186842fa1312d68ccb77748bc50e3f137abca2616c28f6741a9e89b53a",
       "etag": "72c0d632998a613ab6f5e7e7d49f7b0a",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1000/2026/07/amp-modelers-are-dead/gateway.webp",
+      "size": 30420,
+      "sha256": "bc4db4f9754e9776c3eff6c0de9129ba5a2df62bcd249dddfe72c09e0a795ae5",
+      "etag": "5f3a6e4fe2c16b13cc18c3abcca27160",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
@@ -46307,6 +46323,14 @@
       "sha256": "3273033f14e56d3ed3dc2a67abeed73d27cb32ebc2b234246cff9de6b9cfa707",
       "etag": "9d89e351f18e7697403ceff0d66c7f12",
       "contentType": "image/png",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/07/amp-modelers-are-dead/gateway.webp",
+      "size": 16404,
+      "sha256": "75436991d0a78a9235c1466c03847298393c37aa452f76595d5e095d334844b6",
+      "etag": "bd7d176b75a0579675f1e2a25360cd48",
+      "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
