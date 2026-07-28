@@ -18,8 +18,11 @@ seo:
   description: null
   image: null
 ghostId: local-787e2573-9eba-45cd-af10-db347e457eb5
-tags: []
-internalTags: []
+tags:
+  - technical
+  - guitar
+internalTags:
+  - technical
 primaryTag: null
 featured: false
 readingTime: 0
