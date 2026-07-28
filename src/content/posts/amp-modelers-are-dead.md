@@ -25,7 +25,7 @@ internalTags:
   - technical
 primaryTag: null
 featured: false
-readingTime: 0
+readingTime: 2
 drafts: false
 ---
 
