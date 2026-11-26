@@ -2,8 +2,8 @@
   "version": 1,
   "source": "assets-local/content",
   "prefix": "content/",
-  "assetCount": 5805,
-  "totalBytes": 3967400863,
+  "assetCount": 5808,
+  "totalBytes": 3967883839,
   "files": [
     {
       "key": "content/images/2015/08/6877439-Belgrade_Republic_of_Serbia.jpg",
@@ -22062,6 +22062,14 @@
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
     {
+      "key": "content/images/2026/11/black-friday-hard-drive-prices-are-messed-up/row-of-easystore-drives-on-a-cluttered-workbench.webp",
+      "size": 297148,
+      "sha256": "64770a0961fd7b673ffb1fad5620f567b11f32c907f200ebadec16ddd90506c7",
+      "etag": "e0c6b97a73101d997ee8e956338c15d3",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
       "key": "content/images/icon/pinned-octocat-093da3e6fa40-1.svg",
       "size": 1009,
       "sha256": "e2c39927d004078983910c9017066f4257a1d80a7e2456753d1285938dd858e7",
@@ -28594,6 +28602,14 @@
       "size": 25870,
       "sha256": "a41a769d67d40bbd360b730635794d95a722334b9b096a6aa9aea21fbb7b354c",
       "etag": "03e600229b83f06f1efda0f63ca25754",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w1000/2026/11/black-friday-hard-drive-prices-are-messed-up/row-of-easystore-drives-on-a-cluttered-workbench.webp",
+      "size": 127772,
+      "sha256": "454790eaeed7943e821680519ec8b42c0296869ff08943f7e1ae90a0b45d7047",
+      "etag": "53922e71063b65e88ac428ff3cce07df",
       "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
@@ -46386,6 +46402,14 @@
       "size": 14016,
       "sha256": "87276eb414e39cef446b8261314502b510490e9043a35f706467dac272c6016d",
       "etag": "6708917036aae17e89b03ceb0fa19817",
+      "contentType": "image/webp",
+      "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
+    },
+    {
+      "key": "content/images/size/w600/2026/11/black-friday-hard-drive-prices-are-messed-up/row-of-easystore-drives-on-a-cluttered-workbench.webp",
+      "size": 58056,
+      "sha256": "bfb4c4395e4bc784617a129c4437a054dc49e24ec1dfc04de37f588afe1ddaab",
+      "etag": "688e46009e96f457d84c21cc6f0e9cfc",
       "contentType": "image/webp",
       "cacheControl": "public,max-age=2592000,stale-while-revalidate=86400"
     },
