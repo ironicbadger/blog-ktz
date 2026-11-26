@@ -204,7 +204,7 @@ The sad truth is that across the board prices are up a minimum of 58%, and somet
 
 ## How we got down to three HDD makers
 
-When the EasyStore deal looks that bad, my first instinct is to shop around. Try another retailer, buy an enterprise drive, see what’s available recertified. But follow those listings back to the companies that actually make the drives and the choices narrow pretty quickly. There are three big HDD makers left. How did we end up with so few?
+When the EasyStore is that bad, my first instinct is to shop around. Maybe I should try another retailer (to be clear I'm not blaming BestBuy for any of this), buy an enterprise drive, see what’s available recertified. But follow those listings back to the companies that actually make the drives and the choices narrow pretty quickly. There are three big HDD makers left. How did we end up with so few?
 
 Maxtor bought Quantum’s hard drive business in 2001, then Seagate bought Maxtor in 2006. Hitachi combined IBM’s disk business with its own to form HGST in 2003, and Toshiba bought Fujitsu’s HDD business in 2009. Seagate bought Samsung’s HDD business in December 2011, and Western Digital bought HGST in March 2012. The FTC required WD to sell desktop-drive manufacturing assets to Toshiba to keep a third supplier in that market. That left Seagate, Western Digital and Toshiba.
 
