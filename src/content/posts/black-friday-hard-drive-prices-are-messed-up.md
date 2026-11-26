@@ -1,5 +1,5 @@
 ---
-title: "Black Friday hard drive prices are messed up"
+title: "Hard Drive pricing has gotten bad."
 slug: black-friday-hard-drive-prices-are-messed-up
 description: "The same 20TB drive went from $249.99 to $549.99 in two Black Fridays. I dug through eight years of receipts, including my ServerPartDeals orders."
 customExcerpt: null
